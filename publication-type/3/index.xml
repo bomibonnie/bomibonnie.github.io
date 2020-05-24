@@ -5,7 +5,7 @@
     <link>http://bomibonnie.github.io/publication-type/3/</link>
       <atom:link href="http://bomibonnie.github.io/publication-type/3/index.xml" rel="self" type="application/rss+xml" />
     <description>3</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 07 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 24 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>http://bomibonnie.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>3</title>
@@ -13,11 +13,16 @@
     </image>
     
     <item>
-      <title>An example preprint / working paper</title>
-      <link>http://bomibonnie.github.io/publication/preprint/</link>
-      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
-      <guid>http://bomibonnie.github.io/publication/preprint/</guid>
+      <title>Triangles, Major Powers, and Rivalry Duration</title>
+      <link>http://bomibonnie.github.io/publication/conference-paper/</link>
+      <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
+      <guid>http://bomibonnie.github.io/publication/conference-paper/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
   &lt;/div&gt;
