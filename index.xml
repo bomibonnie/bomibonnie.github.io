@@ -61,17 +61,9 @@
       <guid>http://bomibonnie.github.io/talk/example/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
-    Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.
+    You can find my presentation slides by clicking &lt;strong&gt;Slides&lt;/strong&gt; button above.
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;#Slides can be added in a few ways:&lt;/p&gt;
-&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
-&lt;h1 id=&#34;create-slides-using-academics-slideshttpssourcethemescomacademicdocsmanaging-contentcreate-slides-feature-and-link-using-slides-parameter-in-the-front-matter-of-the-talk-file&#34;&gt;&lt;strong&gt;Create&lt;/strong&gt; slides using Academic&amp;rsquo;s 
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;Slides&lt;/em&gt;&lt;/a&gt; feature and link using &lt;code&gt;slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/h1&gt;
-&lt;h1 id=&#34;upload-an-existing-slide-deck-to-static-and-link-using-url_slides-parameter-in-the-front-matter-of-the-talk-file&#34;&gt;&lt;strong&gt;Upload&lt;/strong&gt; an existing slide deck to &lt;code&gt;static/&lt;/code&gt; and link using &lt;code&gt;url_slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/h1&gt;
-&lt;h1 id=&#34;embed-your-slides-eg-google-slides-or-presentation-video-on-this-page-using-shortcodeshttpssourcethemescomacademicdocswriting-markdown-latex&#34;&gt;&lt;strong&gt;Embed&lt;/strong&gt; your slides (e.g. Google Slides) or presentation video on this page using 
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;shortcodes&lt;/a&gt;.&lt;/h1&gt;
-&lt;p&gt;#Further talk details can easily be added to this page using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     
@@ -88,9 +80,9 @@
       <link>http://bomibonnie.github.io/project/internal-project/</link>
       <pubDate>Sat, 23 May 2020 00:00:00 +0000</pubDate>
       <guid>http://bomibonnie.github.io/project/internal-project/</guid>
-      <description>&lt;p&gt;Do triangular relationships influence international relations? When focusing on a rivalry in cross-networks of positive and negative relationships, one can be embedded in three types of triangles. Type Ⅰ consists of one rivalry and two positive relationships, Type Ⅱ of two rivalries and one positive relationship, and Type Ⅲ of three rivalries.  Based on Heider’s (1946) balance theory, Type Ⅱ triangle is balanced, thus, it is more likely to maintain while Type Ⅰ and Ⅲ are less likely because they are imbalanced. 
-First, In Type Ⅰ triangle, a rivalry is connected to a shared friend, thus, the friend of my enemy is my friend. When two rivals have a common friend, we can expect that the third party can be a potential mediator. For instance, when the tension between South Kore and Japan escalated over the disputed territory, the US tried to mediate their conflict because both South Korea and Japan are US’ alliance partners. Second, Type Ⅱ triangle can be more maintainable since the third party is one’s friend as well as the other’s enemy. In other words, the enemy of my enemy is my friend. Type Ⅱ is consistent with extended deterrence. When two friends have a common enemy, their friendship can be stronger and their rivalries can maintain longer. Lastly, in Type Ⅲ triangle, the enemy of my enemy is also my enemy. Under this situation, all countries have a common enemy, thus, if the severity levels are not equal, then one of the three rivalries can be weaker. 
-In this project, I examine whether and how various triangular relationships affect interstate relationships particularly rivalry duration. Network analysis is employed to capture the various triangles. Preliminary analyses of rivalry duration show that rivalries are more likely to terminate when they have a common friend and particularly, the friend is a major power.&lt;/p&gt;
+      <description>&lt;p&gt;Do triangular relationships influence international relations? When focusing on a rivalry in cross-networks of positive and negative relationships, one can be embedded in three types of triangles. Type Ⅰ consists of one rivalry and two positive relationships, Type Ⅱ of two rivalries and one positive relationship, and Type Ⅲ of three rivalries.  Based on Heider’s (1946) balance theory, Type Ⅱ triangle is balanced, thus, it is more likely to maintain while Type Ⅰ and Ⅲ are less likely because they are imbalanced.&lt;/p&gt;
+&lt;p&gt;First, In Type Ⅰ triangle, a rivalry is connected to a shared friend, thus, the friend of my enemy is my friend. When two rivals have a common friend, we can expect that the third party can be a potential mediator. For instance, when the tension between South Kore and Japan escalated over the disputed territory, the US tried to mediate their conflict because both South Korea and Japan are US’ alliance partners. Second, Type Ⅱ triangle can be more maintainable since the third party is one’s friend as well as the other’s enemy. In other words, the enemy of my enemy is my friend. Type Ⅱ is consistent with extended deterrence. When two friends have a common enemy, their friendship can be stronger and their rivalries can maintain longer. Lastly, in Type Ⅲ triangle, the enemy of my enemy is also my enemy. Under this situation, all countries have a common enemy, thus, if the severity levels are not equal, then one of the three rivalries can be weaker.&lt;/p&gt;
+&lt;p&gt;In this project, I examine whether and how various triangular relationships affect interstate relationships particularly rivalry duration. Network analysis is employed to capture the various triangles. Preliminary analyses of rivalry duration show that rivalries are more likely to terminate when they have a common friend and particularly, the friend is a major power.&lt;/p&gt;
 </description>
     </item>
     
