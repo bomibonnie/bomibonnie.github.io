@@ -390,28 +390,29 @@ date: 2019-09-01
       <link>http://bomibonnie.github.io/slides/example/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
       <guid>http://bomibonnie.github.io/slides/example/</guid>
-      <description>
-&lt;section data-noprocess data-shortcode-slide
-  
-      
-      data-background-image=&#34;/img/iowa2.jpg&#34;
-  &gt;
-
-&lt;h1 id=&#34;triangles-major-powers-and-rivalry-duration&#34;&gt;Triangles, Major Powers, and Rivalry Duration&lt;/h1&gt;
+      <description>&lt;h1 id=&#34;triangles-major-powers-and-rivalry-duration&#34;&gt;Triangles, Major Powers, and Rivalry Duration&lt;/h1&gt;
 &lt;p&gt;
 &lt;a href=&#34;https://bomibonnie.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Bomi K. Lee&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;University of Iowa&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;rivalries-dyadic-interactions&#34;&gt;Rivalries: dyadic interactions&lt;/h2&gt;
-&lt;h2 id=&#34;img-data-srcimgrivdyadspng&#34;&gt;
+&lt;p&gt;
 &lt;section data-noprocess data-shortcode-slide
   
       
       data-background-image=&#34;/img/iowa2.jpg&#34;
   &gt;
 
-&lt;img data-src=&#34;http://bomibonnie.github.io/img/rivdyads.png&#34;&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;controls&#34;&gt;Controls&lt;/h2&gt;
+&lt;img data-src=&#34;http://bomibonnie.github.io/img/rivdyads.png&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;rivalries-in-triadic-relationships&#34;&gt;Rivalries in Triadic Relationships?&lt;/h2&gt;
+
+&lt;section data-noprocess data-shortcode-slide
+  
+      
+      data-background-image=&#34;/img/iowa2.jpg&#34;
+  &gt;
+
 &lt;ul&gt;
 &lt;li&gt;Next: &lt;code&gt;Right Arrow&lt;/code&gt; or &lt;code&gt;Space&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Previous: &lt;code&gt;Left Arrow&lt;/code&gt;&lt;/li&gt;
@@ -421,8 +422,6 @@ date: 2019-09-01
 &lt;li&gt;Speaker notes: &lt;code&gt;S&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Fullscreen: &lt;code&gt;F&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Zoom: &lt;code&gt;Alt + Click&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;a href=&#34;https://github.com/hakimel/reveal.js#pdf-export&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PDF Export&lt;/a&gt;: &lt;code&gt;E&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;code-highlighting&#34;&gt;Code Highlighting&lt;/h2&gt;
