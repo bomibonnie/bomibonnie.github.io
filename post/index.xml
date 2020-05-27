@@ -14,6 +14,70 @@
     
     <item>
       <title>Making Network Animations Using NDTV package</title>
+      <link>http://bomibonnie.github.io/post/making-network-animations-using-ndtv-package/</link>
+      <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
+      <guid>http://bomibonnie.github.io/post/making-network-animations-using-ndtv-package/</guid>
+      <description>
+
+
+&lt;div id=&#34;examples&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Examples&lt;/h2&gt;
+&lt;div id=&#34;code&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Code&lt;/h3&gt;
+&lt;p&gt;Load packages&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(statnet)
+library(ndtv)
+library(rio)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;riv &amp;lt;- import(&amp;quot;content/post/ndtv/toyriv.dta&amp;quot;)
+vtx &amp;lt;- import(&amp;quot;content/post/ndtv/node.csv&amp;quot;)
+vtx87 &amp;lt;- import(&amp;quot;content/post/ndtv/vtx1987.csv&amp;quot;)
+vtx92 &amp;lt;- import(&amp;quot;content/post/ndtv/vtx1992.csv&amp;quot;)
+vtx97 &amp;lt;- import(&amp;quot;content/post/ndtv/vtx1997.csv&amp;quot;)
+vtx02 &amp;lt;- import(&amp;quot;content/post/ndtv/vtx2002.csv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;nv &amp;lt;- nrow(vtx)
+
+rivlist &amp;lt;- list()
+
+for(i in 1:4){
+  rivi &amp;lt;- subset(riv, riv$no == i)
+  rivii&amp;lt;-cbind(rivi$stateabb1, rivi$stateabb2)
+  netyr &amp;lt;- network.initialize(nv, directed=FALSE)
+  network.vertex.names(x=netyr) &amp;lt;- vtx$stateabb
+  netyr[rivii] &amp;lt;- 1
+  set.vertex.attribute(x=netyr,attrname=&amp;quot;order&amp;quot;,val=rep(i,nv))
+  rivlist[[i]] &amp;lt;- netyr
+}
+
+rivlist[[1]]
+rivlist
+
+set.vertex.attribute(rivlist[[1]],names(vtx87),vtx87)
+
+cols1&amp;lt;-vector()
+for(i in 1:204){
+  ifelse(rivlist[[1]]$val[[i]]$dem==0, 
+         cols1[i] &amp;lt;- &amp;quot;red&amp;quot;, cols1[i]&amp;lt;-&amp;quot;blue&amp;quot;)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;plot(rivlist[[1]], vertex.col=cols1, edge.col=“grey50”,xpd=T)&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;make-gifs&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Make GIFs!&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rivdyn &amp;lt;- networkDynamic(network.list = rivlist)
+rivgif &amp;lt;- compute.animation(rivdyn, 
+                            default.dist = 3,
+                            animation.mode = &amp;quot;MDSJ&amp;quot;,
+                            verbose = FALSE)
+render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;markdown&#34;&gt;&lt;code&gt;render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;renders as&lt;/p&gt;
+&lt;p&gt;render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Making Network Animations Using NDTV package</title>
       <link>http://bomibonnie.github.io/post/ndtv/</link>
       <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
       <guid>http://bomibonnie.github.io/post/ndtv/</guid>
