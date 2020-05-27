@@ -25,7 +25,8 @@
 &lt;div id=&#34;code&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Code&lt;/h3&gt;
 &lt;p&gt;Load packages&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(statnet)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;knitr::opts_chunk$set(echo = FALSE)
+library(statnet)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Loading required package: tergm&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Loading required package: ergm&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Loading required package: network&lt;/code&gt;&lt;/pre&gt;
@@ -147,37 +148,11 @@
 ## or type citation(&amp;quot;ndtv&amp;quot;).&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(rio)
 library(knitr)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;riv &amp;lt;- import(&amp;quot;C:/Users/bomim/Documents/website-hugo/content/post/toyriv.dta&amp;quot;)
-vtx &amp;lt;- import(&amp;quot;C:/Users/bomim/Documents/website-hugo//content/post/node.csv&amp;quot;)
-vtx87 &amp;lt;- import(&amp;quot;C:/Users/bomim/Documents/website-hugo/content/post/vtx1987.csv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;nv &amp;lt;- nrow(vtx)
-
-rivlist &amp;lt;- list()
-
-for(i in 1:4){
-  rivi &amp;lt;- subset(riv, riv$no == i)
-  rivii&amp;lt;-cbind(rivi$stateabb1, rivi$stateabb2)
-  netyr &amp;lt;- network.initialize(nv, directed=FALSE)
-  network.vertex.names(x=netyr) &amp;lt;- vtx$stateabb
-  netyr[rivii] &amp;lt;- 1
-  set.vertex.attribute(x=netyr,attrname=&amp;quot;order&amp;quot;,val=rep(i,nv))
-  rivlist[[i]] &amp;lt;- netyr
-}
-
-set.vertex.attribute(rivlist[[1]],names(vtx87),vtx87)
-
-cols1&amp;lt;-vector()
-for(i in 1:204){
-  ifelse(rivlist[[1]]$val[[i]]$dem==0, 
-         cols1[i] &amp;lt;- &amp;quot;red&amp;quot;, cols1[i]&amp;lt;-&amp;quot;blue&amp;quot;)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(rivlist[[1]], vertex.col=cols1, edge.col=&amp;quot;grey50&amp;quot;,xpd=T)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://bomibonnie.github.io/post/2020-05-27-making-network-animations-using-ndtv-package_files/figure-html/plot-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;make-gifs&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Make GIFs!&lt;/h2&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rivdyn &amp;lt;- networkDynamic(network.list = rivlist)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Neither start or onsets specified, assuming start=0
 ## Onsets and termini not specified, assuming each network in network.list should have a discrete spell of length 1
 ## Argument base.net not specified, using first element of network.list instead
@@ -188,27 +163,21 @@ for(i in 1:204){
 ##   Temporal mode: discrete 
 ##   Time unit: step 
 ##   Suggested time increment: 1&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rivgif &amp;lt;- compute.animation(rivdyn, 
-                            default.dist = 3,
-                            animation.mode = &amp;quot;MDSJ&amp;quot;,
-                            verbose = FALSE)
-render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 0&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 1&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 2&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 3&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 4&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## wrote animation HTML file to C:\Users\bomim\AppData\Local\Temp\RtmpMPRlVY\file1b9842701793.html&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## opening local URL file://C:\Users\bomim\AppData\Local\Temp\RtmpMPRlVY\file1b9842701793.html in web browser&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## wrote animation HTML file to C:\Users\bomim\AppData\Local\Temp\RtmpwNmg5a\file101843bf744c.html&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## opening local URL file://C:\Users\bomim\AppData\Local\Temp\RtmpwNmg5a\file101843bf744c.html in web browser&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;renders as&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 0&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 1&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 2&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 3&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 4&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## wrote animation HTML file to C:\Users\bomim\AppData\Local\Temp\RtmpMPRlVY\file1b987e0d6610.html&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## opening local URL file://C:\Users\bomim\AppData\Local\Temp\RtmpMPRlVY\file1b987e0d6610.html in web browser&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## wrote animation HTML file to C:\Users\bomim\AppData\Local\Temp\RtmpwNmg5a\file1018256a3a21.html&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## opening local URL file://C:\Users\bomim\AppData\Local\Temp\RtmpwNmg5a\file1018256a3a21.html in web browser&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
     </item>

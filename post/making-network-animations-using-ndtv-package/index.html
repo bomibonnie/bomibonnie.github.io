@@ -28,7 +28,7 @@
     
   
   <meta name="description" content="ExamplesCodeLoad packages
-library(statnet)## Loading required package: tergm## Loading required package: ergm## Loading required package: network## network: Classes for Relational Data## Version 1.16.0 created on 2019-11-30.">
+knitr::opts_chunk$set(echo = FALSE)library(statnet)## Loading required package: tergm## Loading required package: ergm## Loading required package: network## network: Classes for Relational Data## Version 1.">
 
   
   <link rel="alternate" hreflang="en-us" href="http://bomibonnie.github.io/post/making-network-animations-using-ndtv-package/">
@@ -243,7 +243,7 @@ library(statnet)## Loading required package: tergm## Loading required package:
   <meta property="og:url" content="http://bomibonnie.github.io/post/making-network-animations-using-ndtv-package/">
   <meta property="og:title" content="Making Network Animations Using NDTV package | Bomi K. Lee">
   <meta property="og:description" content="ExamplesCodeLoad packages
-library(statnet)## Loading required package: tergm## Loading required package: ergm## Loading required package: network## network: Classes for Relational Data## Version 1.16.0 created on 2019-11-30."><meta property="og:image" content="http://bomibonnie.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+knitr::opts_chunk$set(echo = FALSE)library(statnet)## Loading required package: tergm## Loading required package: ergm## Loading required package: network## network: Classes for Relational Data## Version 1."><meta property="og:image" content="http://bomibonnie.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="http://bomibonnie.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
@@ -293,7 +293,7 @@ library(statnet)## Loading required package: tergm## Loading required package:
       "url": "http://bomibonnie.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "Examples\rCode\rLoad packages\nlibrary(statnet)\r## Loading required package: tergm\r## Loading required package: ergm\r## Loading required package: network\r## network: Classes for Relational Data\r## Version 1.16.0 created on 2019-11-30."
+  "description": "Examples\rCode\rLoad packages\nknitr::opts_chunk$set(echo = FALSE)\rlibrary(statnet)\r## Loading required package: tergm\r## Loading required package: ergm\r## Loading required package: network\r## network: Classes for Relational Data\r## Version 1."
 }
 </script>
 
@@ -744,7 +744,8 @@ library(statnet)## Loading required package: tergm## Loading required package:
 <div id="code" class="section level3">
 <h3>Code</h3>
 <p>Load packages</p>
-<pre class="r"><code>library(statnet)</code></pre>
+<pre class="r"><code>knitr::opts_chunk$set(echo = FALSE)
+library(statnet)</code></pre>
 <pre><code>## Loading required package: tergm</code></pre>
 <pre><code>## Loading required package: ergm</code></pre>
 <pre><code>## Loading required package: network</code></pre>
@@ -866,37 +867,11 @@ library(statnet)## Loading required package: tergm## Loading required package:
 ## or type citation(&quot;ndtv&quot;).</code></pre>
 <pre class="r"><code>library(rio)
 library(knitr)</code></pre>
-<pre class="r"><code>riv &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo/content/post/toyriv.dta&quot;)
-vtx &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo//content/post/node.csv&quot;)
-vtx87 &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo/content/post/vtx1987.csv&quot;)</code></pre>
-<pre class="r"><code>nv &lt;- nrow(vtx)
-
-rivlist &lt;- list()
-
-for(i in 1:4){
-  rivi &lt;- subset(riv, riv$no == i)
-  rivii&lt;-cbind(rivi$stateabb1, rivi$stateabb2)
-  netyr &lt;- network.initialize(nv, directed=FALSE)
-  network.vertex.names(x=netyr) &lt;- vtx$stateabb
-  netyr[rivii] &lt;- 1
-  set.vertex.attribute(x=netyr,attrname=&quot;order&quot;,val=rep(i,nv))
-  rivlist[[i]] &lt;- netyr
-}
-
-set.vertex.attribute(rivlist[[1]],names(vtx87),vtx87)
-
-cols1&lt;-vector()
-for(i in 1:204){
-  ifelse(rivlist[[1]]$val[[i]]$dem==0, 
-         cols1[i] &lt;- &quot;red&quot;, cols1[i]&lt;-&quot;blue&quot;)
-}</code></pre>
-<pre class="r"><code>plot(rivlist[[1]], vertex.col=cols1, edge.col=&quot;grey50&quot;,xpd=T)</code></pre>
 <p><img src="/post/2020-05-27-making-network-animations-using-ndtv-package_files/figure-html/plot-1.png" width="672" /></p>
 </div>
 </div>
 <div id="make-gifs" class="section level2">
 <h2>Make GIFs!</h2>
-<pre class="r"><code>rivdyn &lt;- networkDynamic(network.list = rivlist)</code></pre>
 <pre><code>## Neither start or onsets specified, assuming start=0
 ## Onsets and termini not specified, assuming each network in network.list should have a discrete spell of length 1
 ## Argument base.net not specified, using first element of network.list instead
@@ -907,27 +882,21 @@ for(i in 1:204){
 ##   Temporal mode: discrete 
 ##   Time unit: step 
 ##   Suggested time increment: 1</code></pre>
-<pre class="r"><code>rivgif &lt;- compute.animation(rivdyn, 
-                            default.dist = 3,
-                            animation.mode = &quot;MDSJ&quot;,
-                            verbose = FALSE)
-render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)</code></pre>
 <pre><code>## caching 10 properties for slice 0</code></pre>
 <pre><code>## caching 10 properties for slice 1</code></pre>
 <pre><code>## caching 10 properties for slice 2</code></pre>
 <pre><code>## caching 10 properties for slice 3</code></pre>
 <pre><code>## caching 10 properties for slice 4</code></pre>
-<pre><code>## wrote animation HTML file to C:\Users\bomim\AppData\Local\Temp\RtmpMPRlVY\file1b9842701793.html</code></pre>
-<pre><code>## opening local URL file://C:\Users\bomim\AppData\Local\Temp\RtmpMPRlVY\file1b9842701793.html in web browser</code></pre>
+<pre><code>## wrote animation HTML file to C:\Users\bomim\AppData\Local\Temp\RtmpwNmg5a\file101843bf744c.html</code></pre>
+<pre><code>## opening local URL file://C:\Users\bomim\AppData\Local\Temp\RtmpwNmg5a\file101843bf744c.html in web browser</code></pre>
 <p>renders as</p>
-<pre class="r"><code>render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)</code></pre>
 <pre><code>## caching 10 properties for slice 0</code></pre>
 <pre><code>## caching 10 properties for slice 1</code></pre>
 <pre><code>## caching 10 properties for slice 2</code></pre>
 <pre><code>## caching 10 properties for slice 3</code></pre>
 <pre><code>## caching 10 properties for slice 4</code></pre>
-<pre><code>## wrote animation HTML file to C:\Users\bomim\AppData\Local\Temp\RtmpMPRlVY\file1b987e0d6610.html</code></pre>
-<pre><code>## opening local URL file://C:\Users\bomim\AppData\Local\Temp\RtmpMPRlVY\file1b987e0d6610.html in web browser</code></pre>
+<pre><code>## wrote animation HTML file to C:\Users\bomim\AppData\Local\Temp\RtmpwNmg5a\file1018256a3a21.html</code></pre>
+<pre><code>## opening local URL file://C:\Users\bomim\AppData\Local\Temp\RtmpwNmg5a\file1018256a3a21.html in web browser</code></pre>
 </div>
 
     </div>
