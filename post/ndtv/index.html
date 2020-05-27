@@ -703,7 +703,7 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    4 min read
+    2 min read
   </span>
   
 
@@ -752,154 +752,49 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
 <h2 id="examples">Examples</h2>
 <h3 id="code">Code</h3>
 <p>Load packages</p>
-<pre><code class="language-{r">library(statnet)
+<pre><code class="language-r">library(statnet)
 library(ndtv)
 library(rio)
 </code></pre>
-<p>library(statnet)
-library(ndtv)
-library(rio)</p>
-<p>import(&ldquo;toyriv.dta&rdquo;)</p>
-<h3 id="math">Math</h3>
-<p>Academic supports a Markdown extension for $\LaTeX$ math. You can enable this feature by toggling the <code>math</code> option in your <code>config/_default/params.toml</code> file.</p>
-<p>To render <em>inline</em> or <em>block</em> math, wrap your LaTeX math with <code>$...$</code> or <code>$$...$$</code>, respectively.</p>
-<p>Example <strong>math block</strong>:</p>
-<pre><code class="language-tex">$$\gamma_{n} = \frac{ 
-\left | \left (\mathbf x_{n} - \mathbf x_{n-1} \right )^T 
-\left [\nabla F (\mathbf x_{n}) - \nabla F (\mathbf x_{n-1}) \right ] \right |}
-{\left \|\nabla F(\mathbf{x}_{n}) - \nabla F(\mathbf{x}_{n-1}) \right \|^2}$$
+<pre><code class="language-r">riv &lt;- import(&quot;content/post/ndtv/toyriv.dta&quot;)
+vtx &lt;- import(&quot;content/post/ndtv/node.csv&quot;)
+vtx87 &lt;- import(&quot;content/post/ndtv/vtx1987.csv&quot;)
+vtx92 &lt;- import(&quot;content/post/ndtv/vtx1992.csv&quot;)
+vtx97 &lt;- import(&quot;content/post/ndtv/vtx1997.csv&quot;)
+vtx02 &lt;- import(&quot;content/post/ndtv/vtx2002.csv&quot;)
 </code></pre>
-<p>renders as</p>
-<p>$$\gamma_{n} = \frac{ \left | \left (\mathbf x_{n} - \mathbf x_{n-1} \right )^T \left [\nabla F (\mathbf x_{n}) - \nabla F (\mathbf x_{n-1}) \right ] \right |}{\left |\nabla F(\mathbf{x}_{n}) - \nabla F(\mathbf{x}_{n-1}) \right |^2}$$</p>
-<p>Example <strong>inline math</strong> <code>$\nabla F(\mathbf{x}_{n})$</code> renders as $\nabla F(\mathbf{x}_{n})$.</p>
-<p>Example <strong>multi-line math</strong> using the <code>\\\\</code> math linebreak:</p>
-<pre><code class="language-tex">$$f(k;p_0^*) = \begin{cases} p_0^* &amp; \text{if }k=1, \\\\
-1-p_0^* &amp; \text {if }k=0.\end{cases}$$
-</code></pre>
-<p>renders as</p>
-<p>$$f(k;p_0^*) = \begin{cases} p_0^* &amp; \text{if }k=1, \\<br>
-1-p_0^* &amp; \text {if }k=0.\end{cases}$$</p>
-<h3 id="diagrams">Diagrams</h3>
-<p>Academic supports a Markdown extension for diagrams. You can enable this feature by toggling the <code>diagram</code> option in your <code>config/_default/params.toml</code> file or by adding <code>diagram: true</code> to your page front matter.</p>
-<p>An example <strong>flowchart</strong>:</p>
-<pre><code>```mermaid
-graph TD
-A[Hard] --&gt;|Text| B(Round)
-B --&gt; C{Decision}
-C --&gt;|One| D[Result 1]
-C --&gt;|Two| E[Result 2]
-```
-</code></pre>
-<p>renders as</p>
-<pre><code class="language-mermaid">graph TD
-A[Hard] --&gt;|Text| B(Round)
-B --&gt; C{Decision}
-C --&gt;|One| D[Result 1]
-C --&gt;|Two| E[Result 2]
-</code></pre>
-<p>An example <strong>sequence diagram</strong>:</p>
-<pre><code>```mermaid
-sequenceDiagram
-Alice-&gt;&gt;John: Hello John, how are you?
-loop Healthcheck
-    John-&gt;&gt;John: Fight against hypochondria
-end
-Note right of John: Rational thoughts!
-John--&gt;&gt;Alice: Great!
-John-&gt;&gt;Bob: How about you?
-Bob--&gt;&gt;John: Jolly good!
-```
-</code></pre>
-<p>renders as</p>
-<pre><code class="language-mermaid">sequenceDiagram
-Alice-&gt;&gt;John: Hello John, how are you?
-loop Healthcheck
-    John-&gt;&gt;John: Fight against hypochondria
-end
-Note right of John: Rational thoughts!
-John--&gt;&gt;Alice: Great!
-John-&gt;&gt;Bob: How about you?
-Bob--&gt;&gt;John: Jolly good!
-</code></pre>
-<p>An example <strong>Gantt diagram</strong>:</p>
-<pre><code>```mermaid
-gantt
-section Section
-Completed :done,    des1, 2014-01-06,2014-01-08
-Active        :active,  des2, 2014-01-07, 3d
-Parallel 1   :         des3, after des1, 1d
-Parallel 2   :         des4, after des1, 1d
-Parallel 3   :         des5, after des3, 1d
-Parallel 4   :         des6, after des4, 1d
-```
-</code></pre>
-<p>renders as</p>
-<pre><code class="language-mermaid">gantt
-section Section
-Completed :done,    des1, 2014-01-06,2014-01-08
-Active        :active,  des2, 2014-01-07, 3d
-Parallel 1   :         des3, after des1, 1d
-Parallel 2   :         des4, after des1, 1d
-Parallel 3   :         des5, after des3, 1d
-Parallel 4   :         des6, after des4, 1d
-</code></pre>
-<p>An example <strong>class diagram</strong>:</p>
-<pre><code>```mermaid
-classDiagram
-Class01 &lt;|-- AveryLongClass : Cool
-&lt;&lt;interface&gt;&gt; Class01
-Class09 --&gt; C2 : Where am i?
-Class09 --* C3
-Class09 --|&gt; Class07
-Class07 : equals()
-Class07 : Object[] elementData
-Class01 : size()
-Class01 : int chimp
-Class01 : int gorilla
-class Class10 {
-  &lt;&lt;service&gt;&gt;
-  int id
-  size()
+<pre><code class="language-r">nv &lt;- nrow(vtx)
+
+rivlist &lt;- list()
+
+for(i in 1:4){
+  rivi &lt;- subset(riv, riv$no == i)
+  rivii&lt;-cbind(rivi$stateabb1, rivi$stateabb2)
+  netyr &lt;- network.initialize(nv, directed=FALSE)
+  network.vertex.names(x=netyr) &lt;- vtx$stateabb
+  netyr[rivii] &lt;- 1
+  set.vertex.attribute(x=netyr,attrname=&quot;order&quot;,val=rep(i,nv))
+  rivlist[[i]] &lt;- netyr
 }
-```
-</code></pre>
-<p>renders as</p>
-<pre><code class="language-mermaid">classDiagram
-Class01 &lt;|-- AveryLongClass : Cool
-&lt;&lt;interface&gt;&gt; Class01
-Class09 --&gt; C2 : Where am i?
-Class09 --* C3
-Class09 --|&gt; Class07
-Class07 : equals()
-Class07 : Object[] elementData
-Class01 : size()
-Class01 : int chimp
-Class01 : int gorilla
-class Class10 {
-  &lt;&lt;service&gt;&gt;
-  int id
-  size()
+
+rivlist[[1]]
+rivlist
+
+set.vertex.attribute(rivlist[[1]],names(vtx87),vtx87)
+
+cols1&lt;-vector()
+for(i in 1:204){
+  ifelse(rivlist[[1]]$val[[i]]$dem==0, 
+         cols1[i] &lt;- &quot;red&quot;, cols1[i]&lt;-&quot;blue&quot;)
 }
 </code></pre>
-<p>An example <strong>state diagram</strong>:</p>
-<pre><code>```mermaid
-stateDiagram
-[*] --&gt; Still
-Still --&gt; [*]
-Still --&gt; Moving
-Moving --&gt; Still
-Moving --&gt; Crash
-Crash --&gt; [*]
-```
-</code></pre>
-<p>renders as</p>
-<pre><code class="language-mermaid">stateDiagram
-[*] --&gt; Still
-Still --&gt; [*]
-Still --&gt; Moving
-Moving --&gt; Still
-Moving --&gt; Crash
-Crash --&gt; [*]
+<h2 id="make-gifs">Make GIFs!</h2>
+<pre><code class="language-r">rivdyn &lt;- networkDynamic(network.list = rivlist)
+rivgif &lt;- compute.animation(rivdyn, 
+                            default.dist = 3,
+                            animation.mode = &quot;MDSJ&quot;,
+                            verbose = FALSE)
+render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)
 </code></pre>
 <h3 id="todo-lists">Todo lists</h3>
 <p>You can even write your todo lists in Academic too:</p>
