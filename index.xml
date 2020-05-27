@@ -114,6 +114,7 @@ for(i in 1:204){
          cols1[i] &amp;lt;- &amp;quot;red&amp;quot;, cols1[i]&amp;lt;-&amp;quot;blue&amp;quot;)
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;plot(rivlist[[1]], vertex.col=cols1, edge.col=&amp;quot;grey50&amp;rdquo;,xpd=T)&lt;/p&gt;
 &lt;h2 id=&#34;make-gifs&#34;&gt;Make GIFs!&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;rivdyn &amp;lt;- networkDynamic(network.list = rivlist)
 rivgif &amp;lt;- compute.animation(rivdyn, 
@@ -121,6 +122,8 @@ rivgif &amp;lt;- compute.animation(rivdyn,
                             animation.mode = &amp;quot;MDSJ&amp;quot;,
                             verbose = FALSE)
 render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)&lt;/p&gt;
 &lt;h3 id=&#34;todo-lists&#34;&gt;Todo lists&lt;/h3&gt;

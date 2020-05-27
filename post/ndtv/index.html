@@ -788,6 +788,7 @@ for(i in 1:204){
          cols1[i] &lt;- &quot;red&quot;, cols1[i]&lt;-&quot;blue&quot;)
 }
 </code></pre>
+<p>plot(rivlist[[1]], vertex.col=cols1, edge.col=&quot;grey50&rdquo;,xpd=T)</p>
 <h2 id="make-gifs">Make GIFs!</h2>
 <pre><code class="language-r">rivdyn &lt;- networkDynamic(network.list = rivlist)
 rivgif &lt;- compute.animation(rivdyn, 
@@ -795,6 +796,8 @@ rivgif &lt;- compute.animation(rivdyn,
                             animation.mode = &quot;MDSJ&quot;,
                             verbose = FALSE)
 render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)
+</code></pre>
+<pre><code class="language-{r,">render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)
 </code></pre>
 <p>render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)</p>
 <h3 id="todo-lists">Todo lists</h3>
