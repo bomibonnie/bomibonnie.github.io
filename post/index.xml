@@ -68,7 +68,7 @@ rivgif &amp;lt;- compute.animation(rivdyn,
                             verbose = FALSE)
 render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)
+&lt;pre&gt;&lt;code class=&#34;language-{markdown,&#34;&gt;render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;renders as&lt;/p&gt;
 &lt;p&gt;render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)&lt;/p&gt;
