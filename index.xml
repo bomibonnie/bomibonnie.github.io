@@ -80,15 +80,131 @@
 &lt;div id=&#34;code&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Code&lt;/h3&gt;
 &lt;p&gt;Load packages&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(statnet)
-library(ndtv)
-library(rio)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;riv &amp;lt;- import(&amp;quot;content/post/ndtv/toyriv.dta&amp;quot;)
-vtx &amp;lt;- import(&amp;quot;content/post/ndtv/node.csv&amp;quot;)
-vtx87 &amp;lt;- import(&amp;quot;content/post/ndtv/vtx1987.csv&amp;quot;)
-vtx92 &amp;lt;- import(&amp;quot;content/post/ndtv/vtx1992.csv&amp;quot;)
-vtx97 &amp;lt;- import(&amp;quot;content/post/ndtv/vtx1997.csv&amp;quot;)
-vtx02 &amp;lt;- import(&amp;quot;content/post/ndtv/vtx2002.csv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(statnet)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading required package: tergm&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading required package: ergm&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading required package: network&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## network: Classes for Relational Data
+## Version 1.16.0 created on 2019-11-30.
+## copyright (c) 2005, Carter T. Butts, University of California-Irvine
+##                     Mark S. Handcock, University of California -- Los Angeles
+##                     David R. Hunter, Penn State University
+##                     Martina Morris, University of Washington
+##                     Skye Bender-deMoll, University of Washington
+##  For citation information, type citation(&amp;quot;network&amp;quot;).
+##  Type help(&amp;quot;network-package&amp;quot;) to get started.&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## ergm: version 3.10.4, created on 2019-06-10
+## Copyright (c) 2019, Mark S. Handcock, University of California -- Los Angeles
+##                     David R. Hunter, Penn State University
+##                     Carter T. Butts, University of California -- Irvine
+##                     Steven M. Goodreau, University of Washington
+##                     Pavel N. Krivitsky, University of Wollongong
+##                     Martina Morris, University of Washington
+##                     with contributions from
+##                     Li Wang
+##                     Kirk Li, University of Washington
+##                     Skye Bender-deMoll, University of Washington
+##                     Chad Klumb
+## Based on &amp;quot;statnet&amp;quot; project software (statnet.org).
+## For license and citation information see statnet.org/attribution
+## or type citation(&amp;quot;ergm&amp;quot;).&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## NOTE: Versions before 3.6.1 had a bug in the implementation of the bd()
+## constriant which distorted the sampled distribution somewhat. In
+## addition, Sampson&amp;#39;s Monks datasets had mislabeled vertices. See the
+## NEWS and the documentation for more details.&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## NOTE: Some common term arguments pertaining to vertex attribute and
+## level selection have changed in 3.10.0. See terms help for more
+## details. Use &amp;#39;options(ergm.term=list(version=&amp;quot;3.9.4&amp;quot;))&amp;#39; to use old
+## behavior.&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading required package: networkDynamic&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## networkDynamic: version 0.10.1, created on 2020-01-16
+## Copyright (c) 2020, Carter T. Butts, University of California -- Irvine
+##                     Ayn Leslie-Cook, University of Washington
+##                     Pavel N. Krivitsky, University of Wollongong
+##                     Skye Bender-deMoll, University of Washington
+##                     with contributions from
+##                     Zack Almquist, University of California -- Irvine
+##                     David R. Hunter, Penn State University
+##                     Li Wang
+##                     Kirk Li, University of Washington
+##                     Steven M. Goodreau, University of Washington
+##                     Jeffrey Horner
+##                     Martina Morris, University of Washington
+## Based on &amp;quot;statnet&amp;quot; project software (statnet.org).
+## For license and citation information see statnet.org/attribution
+## or type citation(&amp;quot;networkDynamic&amp;quot;).&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## tergm: version 3.6.1, created on 2019-06-12
+## Copyright (c) 2019, Pavel N. Krivitsky, University of Wollongong
+##                     Mark S. Handcock, University of California -- Los Angeles
+##                     with contributions from
+##                     David R. Hunter, Penn State University
+##                     Steven M. Goodreau, University of Washington
+##                     Martina Morris, University of Washington
+##                     Nicole Bohme Carnegie, New York University
+##                     Carter T. Butts, University of California -- Irvine
+##                     Ayn Leslie-Cook, University of Washington
+##                     Skye Bender-deMoll
+##                     Li Wang
+##                     Kirk Li, University of Washington
+## Based on &amp;quot;statnet&amp;quot; project software (statnet.org).
+## For license and citation information see statnet.org/attribution
+## or type citation(&amp;quot;tergm&amp;quot;).&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading required package: ergm.count&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## ergm.count: version 3.4.0, created on 2019-05-15
+## Copyright (c) 2019, Pavel N. Krivitsky, University of Wollongong
+##                     with contributions from
+##                     Mark S. Handcock, University of California -- Los Angeles
+##                     David R. Hunter, Penn State University
+## Based on &amp;quot;statnet&amp;quot; project software (statnet.org).
+## For license and citation information see statnet.org/attribution
+## or type citation(&amp;quot;ergm.count&amp;quot;).&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## NOTE: The form of the term &amp;#39;CMP&amp;#39; has been changed in version 3.2 of
+## &amp;#39;ergm.count&amp;#39;. See the news or help(&amp;#39;CMP&amp;#39;) for more information.&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading required package: sna&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading required package: statnet.common&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## Attaching package: &amp;#39;statnet.common&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## The following object is masked from &amp;#39;package:base&amp;#39;:
+## 
+##     order&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## sna: Tools for Social Network Analysis
+## Version 2.5 created on 2019-12-09.
+## copyright (c) 2005, Carter T. Butts, University of California-Irvine
+##  For citation information, type citation(&amp;quot;sna&amp;quot;).
+##  Type help(package=&amp;quot;sna&amp;quot;) to get started.&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading required package: tsna&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## statnet: version 2019.6, created on 2019-06-13
+## Copyright (c) 2019, Mark S. Handcock, University of California -- Los Angeles
+##                     David R. Hunter, Penn State University
+##                     Carter T. Butts, University of California -- Irvine
+##                     Steven M. Goodreau, University of Washington
+##                     Pavel N. Krivitsky, University of Wollongong
+##                     Skye Bender-deMoll
+##                     Martina Morris, University of Washington
+## Based on &amp;quot;statnet&amp;quot; project software (statnet.org).
+## For license and citation information see statnet.org/attribution
+## or type citation(&amp;quot;statnet&amp;quot;).&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## unable to reach CRAN&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(ndtv)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading required package: animation&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## ndtv: version 0.13.0, created on 2019-05-21
+## Copyright (c) 2019, Skye Bender-deMoll, University of Washington
+##                     with contributions from
+##                     Martina Morris, University of Washington
+## Based on &amp;quot;statnet&amp;quot; project software (statnet.org).
+## For license and citation information see statnet.org/attribution
+## or type citation(&amp;quot;ndtv&amp;quot;).&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(rio)
+library(knitr)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;riv &amp;lt;- import(&amp;quot;C:/Users/bomim/Documents/website-hugo/content/post/toyriv.dta&amp;quot;)
+vtx &amp;lt;- import(&amp;quot;C:/Users/bomim/Documents/website-hugo//content/post/node.csv&amp;quot;)
+vtx87 &amp;lt;- import(&amp;quot;C:/Users/bomim/Documents/website-hugo/content/post/vtx1987.csv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;nv &amp;lt;- nrow(vtx)
 
 rivlist &amp;lt;- list()
@@ -103,9 +219,6 @@ for(i in 1:4){
   rivlist[[i]] &amp;lt;- netyr
 }
 
-rivlist[[1]]
-rivlist
-
 set.vertex.attribute(rivlist[[1]],names(vtx87),vtx87)
 
 cols1&amp;lt;-vector()
@@ -113,152 +226,45 @@ for(i in 1:204){
   ifelse(rivlist[[1]]$val[[i]]$dem==0, 
          cols1[i] &amp;lt;- &amp;quot;red&amp;quot;, cols1[i]&amp;lt;-&amp;quot;blue&amp;quot;)
 }&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;plot(rivlist[[1]], vertex.col=cols1, edge.col=“grey50”,xpd=T)&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(rivlist[[1]], vertex.col=cols1, edge.col=&amp;quot;grey50&amp;quot;,xpd=T)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://bomibonnie.github.io/post/2020-05-27-making-network-animations-using-ndtv-package_files/figure-html/plot-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;make-gifs&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Make GIFs!&lt;/h2&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rivdyn &amp;lt;- networkDynamic(network.list = rivlist)
-rivgif &amp;lt;- compute.animation(rivdyn, 
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rivdyn &amp;lt;- networkDynamic(network.list = rivlist)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Neither start or onsets specified, assuming start=0
+## Onsets and termini not specified, assuming each network in network.list should have a discrete spell of length 1
+## Argument base.net not specified, using first element of network.list instead
+## Created net.obs.period to describe network
+##  Network observation period info:
+##   Number of observation spells: 1 
+##   Maximal time range observed: 0 until 4 
+##   Temporal mode: discrete 
+##   Time unit: step 
+##   Suggested time increment: 1&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rivgif &amp;lt;- compute.animation(rivdyn, 
                             default.dist = 3,
                             animation.mode = &amp;quot;MDSJ&amp;quot;,
                             verbose = FALSE)
 render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;markdown&#34;&gt;&lt;code&gt;render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 0&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 1&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 2&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 3&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 4&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## wrote animation HTML file to C:\Users\bomim\AppData\Local\Temp\RtmpoXRDyB\file70501aff4f06.html&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## opening local URL file://C:\Users\bomim\AppData\Local\Temp\RtmpoXRDyB\file70501aff4f06.html in web browser&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;renders as&lt;/p&gt;
-&lt;p&gt;render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 0&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 1&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 2&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 3&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 4&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## wrote animation HTML file to C:\Users\bomim\AppData\Local\Temp\RtmpoXRDyB\file705017fa694d.html&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## opening local URL file://C:\Users\bomim\AppData\Local\Temp\RtmpoXRDyB\file705017fa694d.html in web browser&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Making Network Animations Using NDTV package</title>
-      <link>http://bomibonnie.github.io/post/ndtv/</link>
-      <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
-      <guid>http://bomibonnie.github.io/post/ndtv/</guid>
-      <description>&lt;p&gt;Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;On this page, you&amp;rsquo;ll find some examples of the types of technical content that can be rendered with Academic.&lt;/p&gt;
-&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
-&lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
-&lt;p&gt;Load packages&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(statnet)
-library(ndtv)
-library(rio)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;riv &amp;lt;- import(&amp;quot;content/post/ndtv/toyriv.dta&amp;quot;)
-vtx &amp;lt;- import(&amp;quot;content/post/ndtv/node.csv&amp;quot;)
-vtx87 &amp;lt;- import(&amp;quot;content/post/ndtv/vtx1987.csv&amp;quot;)
-vtx92 &amp;lt;- import(&amp;quot;content/post/ndtv/vtx1992.csv&amp;quot;)
-vtx97 &amp;lt;- import(&amp;quot;content/post/ndtv/vtx1997.csv&amp;quot;)
-vtx02 &amp;lt;- import(&amp;quot;content/post/ndtv/vtx2002.csv&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;nv &amp;lt;- nrow(vtx)
-
-rivlist &amp;lt;- list()
-
-for(i in 1:4){
-  rivi &amp;lt;- subset(riv, riv$no == i)
-  rivii&amp;lt;-cbind(rivi$stateabb1, rivi$stateabb2)
-  netyr &amp;lt;- network.initialize(nv, directed=FALSE)
-  network.vertex.names(x=netyr) &amp;lt;- vtx$stateabb
-  netyr[rivii] &amp;lt;- 1
-  set.vertex.attribute(x=netyr,attrname=&amp;quot;order&amp;quot;,val=rep(i,nv))
-  rivlist[[i]] &amp;lt;- netyr
-}
-
-rivlist[[1]]
-rivlist
-
-set.vertex.attribute(rivlist[[1]],names(vtx87),vtx87)
-
-cols1&amp;lt;-vector()
-for(i in 1:204){
-  ifelse(rivlist[[1]]$val[[i]]$dem==0, 
-         cols1[i] &amp;lt;- &amp;quot;red&amp;quot;, cols1[i]&amp;lt;-&amp;quot;blue&amp;quot;)
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;plot(rivlist[[1]], vertex.col=cols1, edge.col=&amp;quot;grey50&amp;rdquo;,xpd=T)&lt;/p&gt;
-&lt;h2 id=&#34;make-gifs&#34;&gt;Make GIFs!&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;rivdyn &amp;lt;- networkDynamic(network.list = rivlist)
-rivgif &amp;lt;- compute.animation(rivdyn, 
-                            default.dist = 3,
-                            animation.mode = &amp;quot;MDSJ&amp;quot;,
-                            verbose = FALSE)
-render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{markdown,&#34;&gt;render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;p&gt;render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)&lt;/p&gt;
-&lt;h3 id=&#34;todo-lists&#34;&gt;Todo lists&lt;/h3&gt;
-&lt;p&gt;You can even write your todo lists in Academic too:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;- [x] Write math example
-- [x] Write diagram example
-- [ ] Do something else
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Write math example&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Write diagram example&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Do something else&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;tables&#34;&gt;Tables&lt;/h3&gt;
-&lt;p&gt;Represent your data in tables:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;First Header&lt;/th&gt;
-&lt;th&gt;Second Header&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Content Cell&lt;/td&gt;
-&lt;td&gt;Content Cell&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Content Cell&lt;/td&gt;
-&lt;td&gt;Content Cell&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;asides&#34;&gt;Asides&lt;/h3&gt;
-&lt;p&gt;Academic supports a 
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/#alerts&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;shortcode for asides&lt;/a&gt;, also referred to as &lt;em&gt;notices&lt;/em&gt;, &lt;em&gt;hints&lt;/em&gt;, or &lt;em&gt;alerts&lt;/em&gt;. By wrapping a paragraph in &lt;code&gt;{{% alert note %}} ... {{% /alert %}}&lt;/code&gt;, it will render as an aside.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{% alert note %}}
-A Markdown aside is useful for displaying notices, hints, or definitions to your readers.
-{{% /alert %}}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    A Markdown aside is useful for displaying notices, hints, or definitions to your readers.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;h3 id=&#34;icons&#34;&gt;Icons&lt;/h3&gt;
-&lt;p&gt;Academic enables you to use a wide range of 
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/page-builder/#icons&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;icons from &lt;em&gt;Font Awesome&lt;/em&gt; and &lt;em&gt;Academicons&lt;/em&gt;&lt;/a&gt; in addition to 
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/#emojis&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;emojis&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Here are some examples using the &lt;code&gt;icon&lt;/code&gt; shortcode to render icons:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{&amp;lt; icon name=&amp;quot;terminal&amp;quot; pack=&amp;quot;fas&amp;quot; &amp;gt;}} Terminal  
-{{&amp;lt; icon name=&amp;quot;python&amp;quot; pack=&amp;quot;fab&amp;quot; &amp;gt;}} Python  
-{{&amp;lt; icon name=&amp;quot;r-project&amp;quot; pack=&amp;quot;fab&amp;quot; &amp;gt;}} R
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
-&lt;p&gt;
-  &lt;i class=&#34;fas fa-terminal  pr-1 fa-fw&#34;&gt;&lt;/i&gt; Terminal&lt;br&gt;
-
-  &lt;i class=&#34;fab fa-python  pr-1 fa-fw&#34;&gt;&lt;/i&gt; Python&lt;br&gt;
-
-  &lt;i class=&#34;fab fa-r-project  pr-1 fa-fw&#34;&gt;&lt;/i&gt; R&lt;/p&gt;
-&lt;h3 id=&#34;did-you-find-this-page-helpful-consider-sharing-it-&#34;&gt;Did you find this page helpful? Consider sharing it 🙌&lt;/h3&gt;
 </description>
     </item>
     
