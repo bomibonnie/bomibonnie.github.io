@@ -67,6 +67,7 @@ rivgif &amp;lt;- compute.animation(rivdyn,
                             verbose = FALSE)
 render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)
 &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)&lt;/p&gt;
 &lt;h3 id=&#34;todo-lists&#34;&gt;Todo lists&lt;/h3&gt;
 &lt;p&gt;You can even write your todo lists in Academic too:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;- [x] Write math example
