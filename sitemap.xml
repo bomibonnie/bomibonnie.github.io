@@ -48,17 +48,12 @@
   </url>
   
   <url>
-    <loc>http://bomibonnie.github.io/category/github/</loc>
-    <lastmod>2020-05-27T18:00:41-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://bomibonnie.github.io/category/hugo/</loc>
-    <lastmod>2020-05-27T18:00:41-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://bomibonnie.github.io/post/making-network-animations-using-ndtv-package/</loc>
+    <lastmod>2020-05-27T18:00:41-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://bomibonnie.github.io/category/networks/</loc>
     <lastmod>2020-05-27T18:00:41-05:00</lastmod>
   </url>
   
@@ -69,11 +64,6 @@
   
   <url>
     <loc>http://bomibonnie.github.io/category/r/</loc>
-    <lastmod>2020-05-27T18:00:41-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://bomibonnie.github.io/category/website/</loc>
     <lastmod>2020-05-27T18:00:41-05:00</lastmod>
   </url>
   
@@ -130,11 +120,6 @@
   <url>
     <loc>http://bomibonnie.github.io/courses/</loc>
     <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://bomibonnie.github.io/post/jupyter/</loc>
-    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>

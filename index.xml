@@ -253,8 +253,8 @@ render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)&lt;/code&gt;&lt;/pr
 &lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 2&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 3&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 4&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## wrote animation HTML file to C:\Users\bomim\AppData\Local\Temp\RtmpoXRDyB\file70501aff4f06.html&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## opening local URL file://C:\Users\bomim\AppData\Local\Temp\RtmpoXRDyB\file70501aff4f06.html in web browser&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## wrote animation HTML file to C:\Users\bomim\AppData\Local\Temp\RtmpMPRlVY\file1b9842701793.html&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## opening local URL file://C:\Users\bomim\AppData\Local\Temp\RtmpMPRlVY\file1b9842701793.html in web browser&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;renders as&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 0&lt;/code&gt;&lt;/pre&gt;
@@ -262,8 +262,8 @@ render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)&lt;/code&gt;&lt;/pr
 &lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 2&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 3&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 4&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## wrote animation HTML file to C:\Users\bomim\AppData\Local\Temp\RtmpoXRDyB\file705017fa694d.html&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## opening local URL file://C:\Users\bomim\AppData\Local\Temp\RtmpoXRDyB\file705017fa694d.html in web browser&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## wrote animation HTML file to C:\Users\bomim\AppData\Local\Temp\RtmpMPRlVY\file1b987e0d6610.html&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## opening local URL file://C:\Users\bomim\AppData\Local\Temp\RtmpMPRlVY\file1b987e0d6610.html in web browser&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -300,55 +300,6 @@ render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)&lt;/code&gt;&lt;/pr
       <description>&lt;p&gt;Do triangular relationships influence international relations? When focusing on a rivalry in cross-networks of positive and negative relationships, one can be embedded in three types of triangles. Type Ⅰ consists of one rivalry and two positive relationships, Type Ⅱ of two rivalries and one positive relationship, and Type Ⅲ of three rivalries.  Based on Heider’s (1946) balance theory, Type Ⅱ triangle is balanced, thus, it is more likely to maintain while Type Ⅰ and Ⅲ are less likely because they are imbalanced.&lt;/p&gt;
 &lt;p&gt;First, In Type Ⅰ triangle, a rivalry is connected to a shared friend, thus, the friend of my enemy is my friend. When two rivals have a common friend, we can expect that the third party can be a potential mediator. For instance, when the tension between South Kore and Japan escalated over the disputed territory, the US tried to mediate their conflict because both South Korea and Japan are US’ alliance partners. Second, Type Ⅱ triangle can be more maintainable since the third party is one’s friend as well as the other’s enemy. In other words, the enemy of my enemy is my friend. Type Ⅱ is consistent with extended deterrence. When two friends have a common enemy, their friendship can be stronger and their rivalries can maintain longer. Lastly, in Type Ⅲ triangle, the enemy of my enemy is also my enemy. Under this situation, all countries have a common enemy, thus, if the severity levels are not equal, then one of the three rivalries can be weaker.&lt;/p&gt;
 &lt;p&gt;In this project, I examine whether and how various triangular relationships affect interstate relationships particularly rivalry duration. Network analysis is employed to capture the various triangles. Preliminary analyses of rivalry duration show that rivalries are more likely to terminate when they have a common friend and particularly, the friend is a major power.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Display Jupyter Notebooks with Academic</title>
-      <link>http://bomibonnie.github.io/post/jupyter/</link>
-      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>http://bomibonnie.github.io/post/jupyter/</guid>
-      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from IPython.core.display import Image
-Image(&#39;https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./index_1_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&amp;quot;Welcome to Academic!&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;Welcome to Academic!
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;install-python-and-jupyterlab&#34;&gt;Install Python and JupyterLab&lt;/h2&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://www.anaconda.com/distribution/#download-section&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Install Anaconda&lt;/a&gt; which includes Python 3 and JupyterLab.&lt;/p&gt;
-&lt;p&gt;Alternatively, install JupyterLab with &lt;code&gt;pip3 install jupyterlab&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;create-or-upload-a-jupyter-notebook&#34;&gt;Create or upload a Jupyter notebook&lt;/h2&gt;
-&lt;p&gt;Run the following commands in your Terminal, substituting &lt;code&gt;&amp;lt;MY-WEBSITE-FOLDER&amp;gt;&lt;/code&gt; and &lt;code&gt;&amp;lt;SHORT-POST-TITLE&amp;gt;&lt;/code&gt; with the file path to your Academic website folder and a short title for your blog post (use hyphens instead of spaces), respectively:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdir -p &amp;lt;MY-WEBSITE-FOLDER&amp;gt;/content/post/&amp;lt;SHORT-POST-TITLE&amp;gt;/
-cd &amp;lt;MY-WEBSITE-FOLDER&amp;gt;/content/post/&amp;lt;SHORT-POST-TITLE&amp;gt;/
-jupyter lab index.ipynb
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The &lt;code&gt;jupyter&lt;/code&gt; command above will launch the JupyterLab editor, allowing us to add Academic metadata and write the content.&lt;/p&gt;
-&lt;h2 id=&#34;edit-your-post-metadata&#34;&gt;Edit your post metadata&lt;/h2&gt;
-&lt;p&gt;The first cell of your Jupter notebook will contain your post metadata (
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/front-matter/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;front matter&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;In Jupter, choose &lt;em&gt;Markdown&lt;/em&gt; as the type of the first cell and wrap your Academic metadata in three dashes, indicating that it is YAML front matter:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;---
-title: My post&#39;s title
-date: 2019-09-01
-
-# Put any other Academic metadata here...
----
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Edit the metadata of your post, using the 
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;documentation&lt;/a&gt; as a guide to the available options.&lt;/p&gt;
-&lt;p&gt;To set a 
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/#featured-image&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;featured image&lt;/a&gt;, place an image named &lt;code&gt;featured&lt;/code&gt; into your post&amp;rsquo;s folder.&lt;/p&gt;
-&lt;p&gt;For other tips, such as using math, see the guide on 
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;writing content with Academic&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;convert-notebook-to-markdown&#34;&gt;Convert notebook to Markdown&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;jupyter nbconvert index.ipynb --to markdown --NbConvertApp.output_files_dir=.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;
-&lt;p&gt;This post was created with Jupyter. The orginal files can be found at &lt;a href=&#34;https://github.com/gcushen/hugo-academic/tree/master/exampleSite/content/post/jupyter&#34;&gt;https://github.com/gcushen/hugo-academic/tree/master/exampleSite/content/post/jupyter&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
