@@ -14,20 +14,23 @@
     
     <item>
       <title>Making Network Animations Using NDTV package</title>
-      <link>http://bomibonnie.github.io/post/writing-technical-content/</link>
+      <link>http://bomibonnie.github.io/post/ndtv/</link>
       <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
-      <guid>http://bomibonnie.github.io/post/writing-technical-content/</guid>
+      <guid>http://bomibonnie.github.io/post/ndtv/</guid>
       <description>&lt;p&gt;Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;On this page, you&amp;rsquo;ll find some examples of the types of technical content that can be rendered with Academic.&lt;/p&gt;
 &lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
 &lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(statnet)
+&lt;p&gt;Load packages&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r&#34;&gt;library(statnet)
 library(ndtv)
+library(rio)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(statnet)
+&lt;p&gt;library(statnet)
 library(ndtv)
-&lt;/code&gt;&lt;/pre&gt;
+library(rio)&lt;/p&gt;
+&lt;p&gt;import(&amp;ldquo;toyriv.dta&amp;rdquo;)&lt;/p&gt;
 &lt;h3 id=&#34;math&#34;&gt;Math&lt;/h3&gt;
 &lt;p&gt;Academic supports a Markdown extension for $\LaTeX$ math. You can enable this feature by toggling the &lt;code&gt;math&lt;/code&gt; option in your &lt;code&gt;config/_default/params.toml&lt;/code&gt; file.&lt;/p&gt;
 &lt;p&gt;To render &lt;em&gt;inline&lt;/em&gt; or &lt;em&gt;block&lt;/em&gt; math, wrap your LaTeX math with &lt;code&gt;$...$&lt;/code&gt; or &lt;code&gt;$$...$$&lt;/code&gt;, respectively.&lt;/p&gt;
