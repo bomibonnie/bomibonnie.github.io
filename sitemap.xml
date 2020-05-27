@@ -43,6 +43,16 @@
   </url>
   
   <url>
+    <loc>http://bomibonnie.github.io/post/writing-technical-content/</loc>
+    <lastmod>2020-05-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://bomibonnie.github.io/post/</loc>
+    <lastmod>2020-05-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://bomibonnie.github.io/publication-type/1/</loc>
     <lastmod>2020-05-24T00:00:00+00:00</lastmod>
   </url>
@@ -93,16 +103,6 @@
   </url>
   
   <url>
-    <loc>http://bomibonnie.github.io/post/</loc>
-    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://bomibonnie.github.io/post/writing-technical-content/</loc>
-    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://bomibonnie.github.io/courses/</loc>
     <lastmod>2019-05-05T00:00:00+01:00</lastmod>
   </url>
@@ -123,23 +123,7 @@
   </url>
   
   <url>
-    <loc>http://bomibonnie.github.io/tag/academic/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://bomibonnie.github.io/post/getting-started/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://bomibonnie.github.io/categories/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://bomibonnie.github.io/category/demo/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>
