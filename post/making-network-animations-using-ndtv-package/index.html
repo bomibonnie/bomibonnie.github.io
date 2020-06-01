@@ -28,7 +28,7 @@
     
   
   <meta name="description" content="The following commands are for making a network animation (moving networks) using R packages statnet and ndtv.
-Load packageslibrary(statnet)library(ndtv)library(rio)library(knitr)Make GIFs!## Neither start or onsets specified, assuming start=0## Onsets and termini not specified, assuming each network in network.">
+Load packageslibrary(statnet)library(ndtv)library(rio)library(knitr)riv &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo/content/post/toyriv.dta&quot;)vtx &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo//content/post/node.csv&quot;)vtx87 &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo/content/post/vtx1987.">
 
   
   <link rel="alternate" hreflang="en-us" href="http://bomibonnie.github.io/post/making-network-animations-using-ndtv-package/">
@@ -243,7 +243,7 @@ Load packageslibrary(statnet)library(ndtv)library(rio)library(knitr)Make G
   <meta property="og:url" content="http://bomibonnie.github.io/post/making-network-animations-using-ndtv-package/">
   <meta property="og:title" content="Making Network Animations Using NDTV package | Bomi K. Lee">
   <meta property="og:description" content="The following commands are for making a network animation (moving networks) using R packages statnet and ndtv.
-Load packageslibrary(statnet)library(ndtv)library(rio)library(knitr)Make GIFs!## Neither start or onsets specified, assuming start=0## Onsets and termini not specified, assuming each network in network."><meta property="og:image" content="http://bomibonnie.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+Load packageslibrary(statnet)library(ndtv)library(rio)library(knitr)riv &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo/content/post/toyriv.dta&quot;)vtx &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo//content/post/node.csv&quot;)vtx87 &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo/content/post/vtx1987."><meta property="og:image" content="http://bomibonnie.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="http://bomibonnie.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
@@ -293,7 +293,7 @@ Load packageslibrary(statnet)library(ndtv)library(rio)library(knitr)Make G
       "url": "http://bomibonnie.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "The following commands are for making a network animation (moving networks) using R packages statnet and ndtv.\nLoad packages\rlibrary(statnet)\rlibrary(ndtv)\rlibrary(rio)\rlibrary(knitr)\r\rMake GIFs!\r## Neither start or onsets specified, assuming start=0\r## Onsets and termini not specified, assuming each network in network."
+  "description": "The following commands are for making a network animation (moving networks) using R packages statnet and ndtv.\nLoad packages\rlibrary(statnet)\rlibrary(ndtv)\rlibrary(rio)\rlibrary(knitr)\rriv \u0026lt;- import(\u0026quot;C:/Users/bomim/Documents/website-hugo/content/post/toyriv.dta\u0026quot;)\rvtx \u0026lt;- import(\u0026quot;C:/Users/bomim/Documents/website-hugo//content/post/node.csv\u0026quot;)\rvtx87 \u0026lt;- import(\u0026quot;C:/Users/bomim/Documents/website-hugo/content/post/vtx1987."
 }
 </script>
 
@@ -787,10 +787,18 @@ Load packageslibrary(statnet)library(ndtv)library(rio)library(knitr)Make G
 library(ndtv)
 library(rio)
 library(knitr)</code></pre>
+<pre class="r"><code>riv &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo/content/post/toyriv.dta&quot;)
+vtx &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo//content/post/node.csv&quot;)
+vtx87 &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo/content/post/vtx1987.csv&quot;)</code></pre>
+<pre class="r"><code>plot(rivlist[[1]], 
+     vertex.col=cols1, 
+     edge.col=&quot;grey50&quot;,
+     xpd=T)</code></pre>
 <p><img src="/post/2020-05-27-making-network-animations-using-ndtv-package_files/figure-html/plot-1.png" width="672" /></p>
 </div>
 <div id="make-gifs" class="section level2">
 <h2>Make GIFs!</h2>
+<pre class="r"><code>rivdyn &lt;- networkDynamic(network.list = rivlist)</code></pre>
 <pre><code>## Neither start or onsets specified, assuming start=0
 ## Onsets and termini not specified, assuming each network in network.list should have a discrete spell of length 1
 ## Argument base.net not specified, using first element of network.list instead
@@ -801,8 +809,14 @@ library(knitr)</code></pre>
 ##   Temporal mode: discrete 
 ##   Time unit: step 
 ##   Suggested time increment: 1</code></pre>
+<pre class="r"><code>rivgif &lt;- compute.animation(rivdyn, 
+                            default.dist = 3,
+                            animation.mode = &quot;MDSJ&quot;,
+                            verbose = FALSE)</code></pre>
 <p>renders as</p>
-<pre class="r"><code>render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1,
+<pre class="r"><code>render.d3movie(rivgif,
+               displaylables=FALSE, 
+               vertex.col=cols1,
                output.mode = &#39;HTML&#39;,
                script.type = &#39;embedded&#39;)</code></pre>
 <pre><code>## caching 10 properties for slice 0</code></pre>
@@ -810,8 +824,8 @@ library(knitr)</code></pre>
 <pre><code>## caching 10 properties for slice 2</code></pre>
 <pre><code>## caching 10 properties for slice 3</code></pre>
 <pre><code>## caching 10 properties for slice 4</code></pre>
-<pre><code>## wrote animation HTML file to C:\Users\bomim\AppData\Local\Temp\RtmpAFN46n\file753874ca2804.html</code></pre>
-<pre><code>## opening local URL file://C:\Users\bomim\AppData\Local\Temp\RtmpAFN46n\file753874ca2804.html in web browser</code></pre>
+<pre><code>## wrote animation HTML file to C:\Users\bomim\AppData\Local\Temp\RtmpmsbbkA\file944e4d2ac6.html</code></pre>
+<pre><code>## opening local URL file://C:\Users\bomim\AppData\Local\Temp\RtmpmsbbkA\file944e4d2ac6.html in web browser</code></pre>
 </div>
 
     </div>
