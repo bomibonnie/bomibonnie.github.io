@@ -93,18 +93,8 @@ vtx87 &amp;lt;- import(&amp;quot;C:/Users/bomim/Documents/website-hugo/content/p
 &lt;/div&gt;
 &lt;div id=&#34;make-gifs&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Make GIFs!&lt;/h2&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rivdyn &amp;lt;- networkDynamic(network.list = rivlist)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Neither start or onsets specified, assuming start=0
-## Onsets and termini not specified, assuming each network in network.list should have a discrete spell of length 1
-## Argument base.net not specified, using first element of network.list instead
-## Created net.obs.period to describe network
-##  Network observation period info:
-##   Number of observation spells: 1 
-##   Maximal time range observed: 0 until 4 
-##   Temporal mode: discrete 
-##   Time unit: step 
-##   Suggested time increment: 1&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rivgif &amp;lt;- compute.animation(rivdyn, 
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rivdyn &amp;lt;- networkDynamic(network.list = rivlist)
+rivgif &amp;lt;- compute.animation(rivdyn, 
                             default.dist = 3,
                             animation.mode = &amp;quot;MDSJ&amp;quot;,
                             verbose = FALSE)&lt;/code&gt;&lt;/pre&gt;
@@ -112,15 +102,7 @@ vtx87 &amp;lt;- import(&amp;quot;C:/Users/bomim/Documents/website-hugo/content/p
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;render.d3movie(rivgif,
                displaylables=FALSE, 
                vertex.col=cols1,
-               output.mode = &amp;#39;HTML&amp;#39;,
                script.type = &amp;#39;embedded&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 0&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 1&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 2&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 3&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 4&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## wrote animation HTML file to C:\Users\bomim\AppData\Local\Temp\RtmpmsbbkA\file944e4d2ac6.html&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## opening local URL file://C:\Users\bomim\AppData\Local\Temp\RtmpmsbbkA\file944e4d2ac6.html in web browser&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
     </item>

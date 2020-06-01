@@ -798,18 +798,8 @@ vtx87 &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo/content/post/vtx1
 </div>
 <div id="make-gifs" class="section level2">
 <h2>Make GIFs!</h2>
-<pre class="r"><code>rivdyn &lt;- networkDynamic(network.list = rivlist)</code></pre>
-<pre><code>## Neither start or onsets specified, assuming start=0
-## Onsets and termini not specified, assuming each network in network.list should have a discrete spell of length 1
-## Argument base.net not specified, using first element of network.list instead
-## Created net.obs.period to describe network
-##  Network observation period info:
-##   Number of observation spells: 1 
-##   Maximal time range observed: 0 until 4 
-##   Temporal mode: discrete 
-##   Time unit: step 
-##   Suggested time increment: 1</code></pre>
-<pre class="r"><code>rivgif &lt;- compute.animation(rivdyn, 
+<pre class="r"><code>rivdyn &lt;- networkDynamic(network.list = rivlist)
+rivgif &lt;- compute.animation(rivdyn, 
                             default.dist = 3,
                             animation.mode = &quot;MDSJ&quot;,
                             verbose = FALSE)</code></pre>
@@ -817,15 +807,7 @@ vtx87 &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo/content/post/vtx1
 <pre class="r"><code>render.d3movie(rivgif,
                displaylables=FALSE, 
                vertex.col=cols1,
-               output.mode = &#39;HTML&#39;,
                script.type = &#39;embedded&#39;)</code></pre>
-<pre><code>## caching 10 properties for slice 0</code></pre>
-<pre><code>## caching 10 properties for slice 1</code></pre>
-<pre><code>## caching 10 properties for slice 2</code></pre>
-<pre><code>## caching 10 properties for slice 3</code></pre>
-<pre><code>## caching 10 properties for slice 4</code></pre>
-<pre><code>## wrote animation HTML file to C:\Users\bomim\AppData\Local\Temp\RtmpmsbbkA\file944e4d2ac6.html</code></pre>
-<pre><code>## opening local URL file://C:\Users\bomim\AppData\Local\Temp\RtmpmsbbkA\file944e4d2ac6.html in web browser</code></pre>
 </div>
 
     </div>
