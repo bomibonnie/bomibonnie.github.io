@@ -20,11 +20,9 @@
       <description>
 
 
-&lt;div id=&#34;examples&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Examples&lt;/h2&gt;
-&lt;div id=&#34;code&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Code&lt;/h3&gt;
-&lt;p&gt;Load packages&lt;/p&gt;
+&lt;p&gt;The following commands are for making a network animation (moving networks) using R packages &lt;em&gt;statnet&lt;/em&gt; and &lt;em&gt;ndtv&lt;/em&gt;.&lt;/p&gt;
+&lt;div id=&#34;load-packages&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Load packages&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;## Loading required package: tergm&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Loading required package: ergm&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Loading required package: network&lt;/code&gt;&lt;/pre&gt;
@@ -145,7 +143,6 @@
 ## or type citation(&amp;quot;ndtv&amp;quot;).&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://bomibonnie.github.io/post/2020-05-27-making-network-animations-using-ndtv-package_files/figure-html/plot-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;
 &lt;div id=&#34;make-gifs&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Make GIFs!&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;## Neither start or onsets specified, assuming start=0
@@ -165,8 +162,8 @@
 &lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 2&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 3&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## caching 10 properties for slice 4&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## wrote animation HTML file to C:\Users\bomim\AppData\Local\Temp\RtmpQtI7uZ\file414642e765d.html&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## opening local URL file://C:\Users\bomim\AppData\Local\Temp\RtmpQtI7uZ\file414642e765d.html in web browser&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## wrote animation HTML file to C:\Users\bomim\AppData\Local\Temp\RtmpaE9BgH\file5f607ed66b9a.html&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## opening local URL file://C:\Users\bomim\AppData\Local\Temp\RtmpaE9BgH\file5f607ed66b9a.html in web browser&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
     </item>
