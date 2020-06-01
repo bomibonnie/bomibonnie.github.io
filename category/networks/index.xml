@@ -30,6 +30,22 @@ library(knitr)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;riv &amp;lt;- import(&amp;quot;C:/Users/bomim/Documents/website-hugo/content/post/toyriv.dta&amp;quot;)
 vtx &amp;lt;- import(&amp;quot;C:/Users/bomim/Documents/website-hugo//content/post/node.csv&amp;quot;)
 vtx87 &amp;lt;- import(&amp;quot;C:/Users/bomim/Documents/website-hugo/content/post/vtx1987.csv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;head(riv)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   year stateabb1 stateabb2 no
+## 1 1987       AFG       PAK  1
+## 2 1992       AFG       PAK  2
+## 3 1997       AFG       PAK  3
+## 4 2002       AFG       PAK  4
+## 5 1997       AFG       TAJ  3
+## 6 1997       AFG       UZB  3&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;head(vtx87)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   stateabb ccode dem        cinc
+## 1      AAB    58   0 0.000002740
+## 2      AFG   700   0 0.001255717
+## 3      ALB   339   0 0.000529850
+## 4      ALG   615   0 0.004066098
+## 5      AND   232   0 0.000000000
+## 6      ANG   540   0 0.001150265&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(rivlist[[1]], 
      vertex.col=cols1, 
      edge.col=&amp;quot;grey50&amp;quot;,
@@ -46,8 +62,7 @@ rivgif &amp;lt;- compute.animation(rivdyn,
 &lt;p&gt;renders as&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;render.d3movie(rivgif,
                displaylables=FALSE, 
-               vertex.col=cols1,
-               script.type = &amp;#39;embedded&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+               vertex.col=cols1)&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
     </item>

@@ -790,6 +790,22 @@ library(knitr)</code></pre>
 <pre class="r"><code>riv &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo/content/post/toyriv.dta&quot;)
 vtx &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo//content/post/node.csv&quot;)
 vtx87 &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo/content/post/vtx1987.csv&quot;)</code></pre>
+<pre class="r"><code>head(riv)</code></pre>
+<pre><code>##   year stateabb1 stateabb2 no
+## 1 1987       AFG       PAK  1
+## 2 1992       AFG       PAK  2
+## 3 1997       AFG       PAK  3
+## 4 2002       AFG       PAK  4
+## 5 1997       AFG       TAJ  3
+## 6 1997       AFG       UZB  3</code></pre>
+<pre class="r"><code>head(vtx87)</code></pre>
+<pre><code>##   stateabb ccode dem        cinc
+## 1      AAB    58   0 0.000002740
+## 2      AFG   700   0 0.001255717
+## 3      ALB   339   0 0.000529850
+## 4      ALG   615   0 0.004066098
+## 5      AND   232   0 0.000000000
+## 6      ANG   540   0 0.001150265</code></pre>
 <pre class="r"><code>plot(rivlist[[1]], 
      vertex.col=cols1, 
      edge.col=&quot;grey50&quot;,
@@ -806,8 +822,7 @@ rivgif &lt;- compute.animation(rivdyn,
 <p>renders as</p>
 <pre class="r"><code>render.d3movie(rivgif,
                displaylables=FALSE, 
-               vertex.col=cols1,
-               script.type = &#39;embedded&#39;)</code></pre>
+               vertex.col=cols1)</code></pre>
 </div>
 
     </div>
