@@ -76,15 +76,20 @@
 
 
 &lt;p&gt;The following commands are for making a network animation (moving networks) using R packages &lt;em&gt;statnet&lt;/em&gt; and &lt;em&gt;ndtv&lt;/em&gt;.&lt;/p&gt;
-&lt;div id=&#34;load-packages&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Load packages&lt;/h2&gt;
+&lt;div id=&#34;load-packages&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Load packages&lt;/h3&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(statnet)
 library(ndtv)
 library(rio)
 library(knitr)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;load-data&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Load data&lt;/h3&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;riv &amp;lt;- import(&amp;quot;C:/Users/bomim/Documents/website-hugo/content/post/toyriv.dta&amp;quot;)
 vtx &amp;lt;- import(&amp;quot;C:/Users/bomim/Documents/website-hugo//content/post/node.csv&amp;quot;)
 vtx87 &amp;lt;- import(&amp;quot;C:/Users/bomim/Documents/website-hugo/content/post/vtx1987.csv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;look-at-the-data&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Look at the data&lt;/h4&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;head(riv)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##   year stateabb1 stateabb2 no
 ## 1 1987       AFG       PAK  1
@@ -101,23 +106,36 @@ vtx87 &amp;lt;- import(&amp;quot;C:/Users/bomim/Documents/website-hugo/content/p
 ## 4      ALG   615   0 0.004066098
 ## 5      AND   232   0 0.000000000
 ## 6      ANG   540   0 0.001150265&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;make-a-list-of-networks&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Make a list of networks&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Set vertex attribute&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Make a plot&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(rivlist[[1]], 
      vertex.col=cols1, 
      edge.col=&amp;quot;grey50&amp;quot;,
      xpd=T)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://bomibonnie.github.io/post/2020-05-27-making-network-animations-using-ndtv-package_files/figure-html/plot-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;div id=&#34;make-gifs&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Make GIFs!&lt;/h2&gt;
+&lt;div id=&#34;make-gifs&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Make GIFs!&lt;/h3&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;rivdyn &amp;lt;- networkDynamic(network.list = rivlist)
 rivgif &amp;lt;- compute.animation(rivdyn, 
                             default.dist = 3,
                             animation.mode = &amp;quot;MDSJ&amp;quot;,
                             verbose = FALSE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;renders as&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;render.d3movie(rivgif,
                displaylables=FALSE, 
                vertex.col=cols1)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    You can find the network animation by clicking &lt;strong&gt;Video&lt;/strong&gt; button above.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>

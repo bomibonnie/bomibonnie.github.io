@@ -28,7 +28,7 @@
     
   
   <meta name="description" content="The following commands are for making a network animation (moving networks) using R packages statnet and ndtv.
-Load packageslibrary(statnet)library(ndtv)library(rio)library(knitr)riv &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo/content/post/toyriv.dta&quot;)vtx &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo//content/post/node.csv&quot;)vtx87 &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo/content/post/vtx1987.">
+Load packageslibrary(statnet)library(ndtv)library(rio)library(knitr)Load datariv &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo/content/post/toyriv.dta&quot;)vtx &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo//content/post/node.">
 
   
   <link rel="alternate" hreflang="en-us" href="http://bomibonnie.github.io/post/making-network-animations-using-ndtv-package/">
@@ -243,7 +243,7 @@ Load packageslibrary(statnet)library(ndtv)library(rio)library(knitr)riv &lt
   <meta property="og:url" content="http://bomibonnie.github.io/post/making-network-animations-using-ndtv-package/">
   <meta property="og:title" content="Making Network Animations Using NDTV package | Bomi K. Lee">
   <meta property="og:description" content="The following commands are for making a network animation (moving networks) using R packages statnet and ndtv.
-Load packageslibrary(statnet)library(ndtv)library(rio)library(knitr)riv &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo/content/post/toyriv.dta&quot;)vtx &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo//content/post/node.csv&quot;)vtx87 &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo/content/post/vtx1987."><meta property="og:image" content="http://bomibonnie.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+Load packageslibrary(statnet)library(ndtv)library(rio)library(knitr)Load datariv &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo/content/post/toyriv.dta&quot;)vtx &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo//content/post/node."><meta property="og:image" content="http://bomibonnie.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="http://bomibonnie.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
@@ -293,7 +293,7 @@ Load packageslibrary(statnet)library(ndtv)library(rio)library(knitr)riv &lt
       "url": "http://bomibonnie.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "The following commands are for making a network animation (moving networks) using R packages statnet and ndtv.\nLoad packages\rlibrary(statnet)\rlibrary(ndtv)\rlibrary(rio)\rlibrary(knitr)\rriv \u0026lt;- import(\u0026quot;C:/Users/bomim/Documents/website-hugo/content/post/toyriv.dta\u0026quot;)\rvtx \u0026lt;- import(\u0026quot;C:/Users/bomim/Documents/website-hugo//content/post/node.csv\u0026quot;)\rvtx87 \u0026lt;- import(\u0026quot;C:/Users/bomim/Documents/website-hugo/content/post/vtx1987."
+  "description": "The following commands are for making a network animation (moving networks) using R packages statnet and ndtv.\nLoad packages\rlibrary(statnet)\rlibrary(ndtv)\rlibrary(rio)\rlibrary(knitr)\r\rLoad data\rriv \u0026lt;- import(\u0026quot;C:/Users/bomim/Documents/website-hugo/content/post/toyriv.dta\u0026quot;)\rvtx \u0026lt;- import(\u0026quot;C:/Users/bomim/Documents/website-hugo//content/post/node."
 }
 </script>
 
@@ -781,15 +781,20 @@ Load packageslibrary(statnet)library(ndtv)library(rio)library(knitr)riv &lt
 
 
 <p>The following commands are for making a network animation (moving networks) using R packages <em>statnet</em> and <em>ndtv</em>.</p>
-<div id="load-packages" class="section level2">
-<h2>Load packages</h2>
+<div id="load-packages" class="section level3">
+<h3>Load packages</h3>
 <pre class="r"><code>library(statnet)
 library(ndtv)
 library(rio)
 library(knitr)</code></pre>
+</div>
+<div id="load-data" class="section level3">
+<h3>Load data</h3>
 <pre class="r"><code>riv &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo/content/post/toyriv.dta&quot;)
 vtx &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo//content/post/node.csv&quot;)
 vtx87 &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo/content/post/vtx1987.csv&quot;)</code></pre>
+<div id="look-at-the-data" class="section level4">
+<h4>Look at the data</h4>
 <pre class="r"><code>head(riv)</code></pre>
 <pre><code>##   year stateabb1 stateabb2 no
 ## 1 1987       AFG       PAK  1
@@ -806,23 +811,36 @@ vtx87 &lt;- import(&quot;C:/Users/bomim/Documents/website-hugo/content/post/vtx1
 ## 4      ALG   615   0 0.004066098
 ## 5      AND   232   0 0.000000000
 ## 6      ANG   540   0 0.001150265</code></pre>
+</div>
+</div>
+<div id="make-a-list-of-networks" class="section level3">
+<h3>Make a list of networks</h3>
+<ul>
+<li><p>Set vertex attribute</p></li>
+<li><p>Make a plot</p></li>
+</ul>
 <pre class="r"><code>plot(rivlist[[1]], 
      vertex.col=cols1, 
      edge.col=&quot;grey50&quot;,
      xpd=T)</code></pre>
 <p><img src="/post/2020-05-27-making-network-animations-using-ndtv-package_files/figure-html/plot-1.png" width="672" /></p>
 </div>
-<div id="make-gifs" class="section level2">
-<h2>Make GIFs!</h2>
+<div id="make-gifs" class="section level3">
+<h3>Make GIFs!</h3>
 <pre class="r"><code>rivdyn &lt;- networkDynamic(network.list = rivlist)
 rivgif &lt;- compute.animation(rivdyn, 
                             default.dist = 3,
                             animation.mode = &quot;MDSJ&quot;,
                             verbose = FALSE)</code></pre>
-<p>renders as</p>
 <pre class="r"><code>render.d3movie(rivgif,
                displaylables=FALSE, 
                vertex.col=cols1)</code></pre>
+<p><div class="alert alert-note">
+  <div>
+    You can find the network animation by clicking <strong>Video</strong> button above.
+  </div>
+</div>
+</p>
 </div>
 
     </div>
