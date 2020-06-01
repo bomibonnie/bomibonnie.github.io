@@ -28,7 +28,7 @@
     
   
   <meta name="description" content="The following commands are for making a network animation (moving networks) using R packages statnet and ndtv.
-Load packages## Loading required package: tergm## Loading required package: ergm## Loading required package: network## network: Classes for Relational Data## Version 1.">
+Load packageslibrary(statnet)library(ndtv)library(rio)library(knitr)Make GIFs!## Neither start or onsets specified, assuming start=0## Onsets and termini not specified, assuming each network in network.">
 
   
   <link rel="alternate" hreflang="en-us" href="http://bomibonnie.github.io/post/making-network-animations-using-ndtv-package/">
@@ -243,7 +243,7 @@ Load packages## Loading required package: tergm## Loading required package: er
   <meta property="og:url" content="http://bomibonnie.github.io/post/making-network-animations-using-ndtv-package/">
   <meta property="og:title" content="Making Network Animations Using NDTV package | Bomi K. Lee">
   <meta property="og:description" content="The following commands are for making a network animation (moving networks) using R packages statnet and ndtv.
-Load packages## Loading required package: tergm## Loading required package: ergm## Loading required package: network## network: Classes for Relational Data## Version 1."><meta property="og:image" content="http://bomibonnie.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+Load packageslibrary(statnet)library(ndtv)library(rio)library(knitr)Make GIFs!## Neither start or onsets specified, assuming start=0## Onsets and termini not specified, assuming each network in network."><meta property="og:image" content="http://bomibonnie.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="http://bomibonnie.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
@@ -293,7 +293,7 @@ Load packages## Loading required package: tergm## Loading required package: er
       "url": "http://bomibonnie.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "The following commands are for making a network animation (moving networks) using R packages statnet and ndtv.\nLoad packages\r## Loading required package: tergm\r## Loading required package: ergm\r## Loading required package: network\r## network: Classes for Relational Data\r## Version 1."
+  "description": "The following commands are for making a network animation (moving networks) using R packages statnet and ndtv.\nLoad packages\rlibrary(statnet)\rlibrary(ndtv)\rlibrary(rio)\rlibrary(knitr)\r\rMake GIFs!\r## Neither start or onsets specified, assuming start=0\r## Onsets and termini not specified, assuming each network in network."
 }
 </script>
 
@@ -696,7 +696,7 @@ Load packages## Loading required package: tergm## Loading required package: er
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    5 min read
+    1 min read
   </span>
   
 
@@ -727,6 +727,47 @@ Load packages## Loading required package: tergm## Loading required package: er
 
 
 
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary my-1 mr-1" href="/rivndtv.mp4" target="_blank" rel="noopener">
+  Video
+</a>
+
+
+
+
+
+</div>
+
 
   
 </div>
@@ -742,124 +783,10 @@ Load packages## Loading required package: tergm## Loading required package: er
 <p>The following commands are for making a network animation (moving networks) using R packages <em>statnet</em> and <em>ndtv</em>.</p>
 <div id="load-packages" class="section level2">
 <h2>Load packages</h2>
-<pre><code>## Loading required package: tergm</code></pre>
-<pre><code>## Loading required package: ergm</code></pre>
-<pre><code>## Loading required package: network</code></pre>
-<pre><code>## network: Classes for Relational Data
-## Version 1.16.0 created on 2019-11-30.
-## copyright (c) 2005, Carter T. Butts, University of California-Irvine
-##                     Mark S. Handcock, University of California -- Los Angeles
-##                     David R. Hunter, Penn State University
-##                     Martina Morris, University of Washington
-##                     Skye Bender-deMoll, University of Washington
-##  For citation information, type citation(&quot;network&quot;).
-##  Type help(&quot;network-package&quot;) to get started.</code></pre>
-<pre><code>## 
-## ergm: version 3.10.4, created on 2019-06-10
-## Copyright (c) 2019, Mark S. Handcock, University of California -- Los Angeles
-##                     David R. Hunter, Penn State University
-##                     Carter T. Butts, University of California -- Irvine
-##                     Steven M. Goodreau, University of Washington
-##                     Pavel N. Krivitsky, University of Wollongong
-##                     Martina Morris, University of Washington
-##                     with contributions from
-##                     Li Wang
-##                     Kirk Li, University of Washington
-##                     Skye Bender-deMoll, University of Washington
-##                     Chad Klumb
-## Based on &quot;statnet&quot; project software (statnet.org).
-## For license and citation information see statnet.org/attribution
-## or type citation(&quot;ergm&quot;).</code></pre>
-<pre><code>## NOTE: Versions before 3.6.1 had a bug in the implementation of the bd()
-## constriant which distorted the sampled distribution somewhat. In
-## addition, Sampson&#39;s Monks datasets had mislabeled vertices. See the
-## NEWS and the documentation for more details.</code></pre>
-<pre><code>## NOTE: Some common term arguments pertaining to vertex attribute and
-## level selection have changed in 3.10.0. See terms help for more
-## details. Use &#39;options(ergm.term=list(version=&quot;3.9.4&quot;))&#39; to use old
-## behavior.</code></pre>
-<pre><code>## Loading required package: networkDynamic</code></pre>
-<pre><code>## 
-## networkDynamic: version 0.10.1, created on 2020-01-16
-## Copyright (c) 2020, Carter T. Butts, University of California -- Irvine
-##                     Ayn Leslie-Cook, University of Washington
-##                     Pavel N. Krivitsky, University of Wollongong
-##                     Skye Bender-deMoll, University of Washington
-##                     with contributions from
-##                     Zack Almquist, University of California -- Irvine
-##                     David R. Hunter, Penn State University
-##                     Li Wang
-##                     Kirk Li, University of Washington
-##                     Steven M. Goodreau, University of Washington
-##                     Jeffrey Horner
-##                     Martina Morris, University of Washington
-## Based on &quot;statnet&quot; project software (statnet.org).
-## For license and citation information see statnet.org/attribution
-## or type citation(&quot;networkDynamic&quot;).</code></pre>
-<pre><code>## 
-## tergm: version 3.6.1, created on 2019-06-12
-## Copyright (c) 2019, Pavel N. Krivitsky, University of Wollongong
-##                     Mark S. Handcock, University of California -- Los Angeles
-##                     with contributions from
-##                     David R. Hunter, Penn State University
-##                     Steven M. Goodreau, University of Washington
-##                     Martina Morris, University of Washington
-##                     Nicole Bohme Carnegie, New York University
-##                     Carter T. Butts, University of California -- Irvine
-##                     Ayn Leslie-Cook, University of Washington
-##                     Skye Bender-deMoll
-##                     Li Wang
-##                     Kirk Li, University of Washington
-## Based on &quot;statnet&quot; project software (statnet.org).
-## For license and citation information see statnet.org/attribution
-## or type citation(&quot;tergm&quot;).</code></pre>
-<pre><code>## Loading required package: ergm.count</code></pre>
-<pre><code>## 
-## ergm.count: version 3.4.0, created on 2019-05-15
-## Copyright (c) 2019, Pavel N. Krivitsky, University of Wollongong
-##                     with contributions from
-##                     Mark S. Handcock, University of California -- Los Angeles
-##                     David R. Hunter, Penn State University
-## Based on &quot;statnet&quot; project software (statnet.org).
-## For license and citation information see statnet.org/attribution
-## or type citation(&quot;ergm.count&quot;).</code></pre>
-<pre><code>## NOTE: The form of the term &#39;CMP&#39; has been changed in version 3.2 of
-## &#39;ergm.count&#39;. See the news or help(&#39;CMP&#39;) for more information.</code></pre>
-<pre><code>## Loading required package: sna</code></pre>
-<pre><code>## Loading required package: statnet.common</code></pre>
-<pre><code>## 
-## Attaching package: &#39;statnet.common&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:base&#39;:
-## 
-##     order</code></pre>
-<pre><code>## sna: Tools for Social Network Analysis
-## Version 2.5 created on 2019-12-09.
-## copyright (c) 2005, Carter T. Butts, University of California-Irvine
-##  For citation information, type citation(&quot;sna&quot;).
-##  Type help(package=&quot;sna&quot;) to get started.</code></pre>
-<pre><code>## Loading required package: tsna</code></pre>
-<pre><code>## 
-## statnet: version 2019.6, created on 2019-06-13
-## Copyright (c) 2019, Mark S. Handcock, University of California -- Los Angeles
-##                     David R. Hunter, Penn State University
-##                     Carter T. Butts, University of California -- Irvine
-##                     Steven M. Goodreau, University of Washington
-##                     Pavel N. Krivitsky, University of Wollongong
-##                     Skye Bender-deMoll
-##                     Martina Morris, University of Washington
-## Based on &quot;statnet&quot; project software (statnet.org).
-## For license and citation information see statnet.org/attribution
-## or type citation(&quot;statnet&quot;).</code></pre>
-<pre><code>## unable to reach CRAN</code></pre>
-<pre><code>## Loading required package: animation</code></pre>
-<pre><code>## 
-## ndtv: version 0.13.0, created on 2019-05-21
-## Copyright (c) 2019, Skye Bender-deMoll, University of Washington
-##                     with contributions from
-##                     Martina Morris, University of Washington
-## Based on &quot;statnet&quot; project software (statnet.org).
-## For license and citation information see statnet.org/attribution
-## or type citation(&quot;ndtv&quot;).</code></pre>
+<pre class="r"><code>library(statnet)
+library(ndtv)
+library(rio)
+library(knitr)</code></pre>
 <p><img src="/post/2020-05-27-making-network-animations-using-ndtv-package_files/figure-html/plot-1.png" width="672" /></p>
 </div>
 <div id="make-gifs" class="section level2">
@@ -875,14 +802,16 @@ Load packages## Loading required package: tergm## Loading required package: er
 ##   Time unit: step 
 ##   Suggested time increment: 1</code></pre>
 <p>renders as</p>
-<pre class="r"><code>render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1)</code></pre>
+<pre class="r"><code>render.d3movie(rivgif,displaylables=FALSE, vertex.col=cols1,
+               output.mode = &#39;HTML&#39;,
+               script.type = &#39;embedded&#39;)</code></pre>
 <pre><code>## caching 10 properties for slice 0</code></pre>
 <pre><code>## caching 10 properties for slice 1</code></pre>
 <pre><code>## caching 10 properties for slice 2</code></pre>
 <pre><code>## caching 10 properties for slice 3</code></pre>
 <pre><code>## caching 10 properties for slice 4</code></pre>
-<pre><code>## wrote animation HTML file to C:\Users\bomim\AppData\Local\Temp\RtmpaE9BgH\file5f607ed66b9a.html</code></pre>
-<pre><code>## opening local URL file://C:\Users\bomim\AppData\Local\Temp\RtmpaE9BgH\file5f607ed66b9a.html in web browser</code></pre>
+<pre><code>## wrote animation HTML file to C:\Users\bomim\AppData\Local\Temp\RtmpAFN46n\file753874ca2804.html</code></pre>
+<pre><code>## opening local URL file://C:\Users\bomim\AppData\Local\Temp\RtmpAFN46n\file753874ca2804.html in web browser</code></pre>
 </div>
 
     </div>
