@@ -14,9 +14,9 @@
     
     <item>
       <title>Example Page 1</title>
-      <link>http://bomibonnie.github.io/courses/example/example1/</link>
+      <link>http://bomibonnie.github.io/courses/analyzing-political-data/example1/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
-      <guid>http://bomibonnie.github.io/courses/example/example1/</guid>
+      <guid>http://bomibonnie.github.io/courses/analyzing-political-data/example1/</guid>
       <description>&lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
 &lt;h2 id=&#34;tip-1&#34;&gt;Tip 1&lt;/h2&gt;
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
@@ -35,9 +35,9 @@
     
     <item>
       <title>Example Page 2</title>
-      <link>http://bomibonnie.github.io/courses/example/example2/</link>
+      <link>http://bomibonnie.github.io/courses/analyzing-political-data/example2/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
-      <guid>http://bomibonnie.github.io/courses/example/example2/</guid>
+      <guid>http://bomibonnie.github.io/courses/analyzing-political-data/example2/</guid>
       <description>&lt;p&gt;Here are some more tips for getting started with Academic:&lt;/p&gt;
 &lt;h2 id=&#34;tip-3&#34;&gt;Tip 3&lt;/h2&gt;
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
@@ -110,9 +110,31 @@ vtx87 &amp;lt;- import(&amp;quot;C:/Users/bomim/Documents/website-hugo/content/p
 &lt;/div&gt;
 &lt;div id=&#34;make-a-list-of-networks&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Make a list of networks&lt;/h3&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;nv &amp;lt;- nrow(vtx)
+
+rivlist &amp;lt;- list()
+
+for(i in 1:4){
+  rivi &amp;lt;- subset(riv, riv$no == i)
+  rivii&amp;lt;-cbind(rivi$stateabb1, rivi$stateabb2)
+  netyr &amp;lt;- network.initialize(nv, directed=FALSE)
+  network.vertex.names(x=netyr) &amp;lt;- vtx$stateabb
+  netyr[rivii] &amp;lt;- 1
+  set.vertex.attribute(x=netyr,attrname=&amp;quot;order&amp;quot;,val=rep(i,nv))
+  rivlist[[i]] &amp;lt;- netyr
+}&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Set vertex attribute&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Make a plot&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;Set vertex attribute&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;set.vertex.attribute(rivlist[[1]],names(vtx87),vtx87)
+
+cols1&amp;lt;-vector()
+for(i in 1:204){
+  ifelse(rivlist[[1]]$val[[i]]$dem==0, 
+         cols1[i] &amp;lt;- &amp;quot;red&amp;quot;, cols1[i]&amp;lt;-&amp;quot;blue&amp;quot;)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Make a plot&lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(rivlist[[1]], 
      vertex.col=cols1, 
@@ -132,7 +154,7 @@ rivgif &amp;lt;- compute.animation(rivdyn,
                vertex.col=cols1)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
-    You can find the network animation by clicking &lt;strong&gt;Video&lt;/strong&gt; button above.
+    You can look at the network animation by clicking &lt;strong&gt;Video&lt;/strong&gt; button above.
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;/p&gt;
