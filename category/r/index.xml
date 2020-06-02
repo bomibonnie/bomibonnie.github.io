@@ -20,7 +20,7 @@
       <description>
 
 
-&lt;p&gt;The following commands are for making a network animation (moving networks) using R packages &lt;em&gt;statnet&lt;/em&gt; and &lt;em&gt;ndtv&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;The following commands are for making a network animation (moving networks) using R packages &lt;code&gt;statnet&lt;/code&gt; and &lt;code&gt;ndtv&lt;/code&gt;.&lt;/p&gt;
 &lt;div id=&#34;load-packages&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Load packages&lt;/h3&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(statnet)
