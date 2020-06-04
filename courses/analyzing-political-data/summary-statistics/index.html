@@ -27,8 +27,8 @@
   
     
   
-  <meta name="description" content="In this tutorial, I&rsquo;ll share my top 10 tips for getting started with Academic:
-Tip 1 hist Tip 2 ">
+  <meta name="description" content="In this page, I&rsquo;ll share Stata commands for summary statistics.
+Opening data with use command use &quot;your file name.dta&quot;, clear [,clear] is telling Stata to clear any other data that you have opened in Stata.">
 
   
   <link rel="alternate" hreflang="en-us" href="http://bomibonnie.github.io/courses/analyzing-political-data/summary-statistics/">
@@ -242,8 +242,8 @@ Tip 1 hist Tip 2 ">
   <meta property="og:site_name" content="Bomi K. Lee">
   <meta property="og:url" content="http://bomibonnie.github.io/courses/analyzing-political-data/summary-statistics/">
   <meta property="og:title" content="Summary Statistics | Bomi K. Lee">
-  <meta property="og:description" content="In this tutorial, I&rsquo;ll share my top 10 tips for getting started with Academic:
-Tip 1 hist Tip 2 "><meta property="og:image" content="http://bomibonnie.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="og:description" content="In this page, I&rsquo;ll share Stata commands for summary statistics.
+Opening data with use command use &quot;your file name.dta&quot;, clear [,clear] is telling Stata to clear any other data that you have opened in Stata."><meta property="og:image" content="http://bomibonnie.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="http://bomibonnie.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
@@ -676,8 +676,9 @@ Tip 1 hist Tip 2 "><meta property="og:image" content="http://bomibonnie.github.
 
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#tip-1">Tip 1</a></li>
-    <li><a href="#tip-2">Tip 2</a></li>
+    <li><a href="#opening-data-with-use-command">Opening data with <code>use</code> command</a></li>
+    <li><a href="#looking-at-variables">Looking at variables</a></li>
+    <li><a href="#measures-of-central-tendancy-mean-median-mode">Measures of central tendancy: mean, median, mode</a></li>
   </ul>
 </nav>
 
@@ -693,11 +694,30 @@ Tip 1 hist Tip 2 "><meta property="og:image" content="http://bomibonnie.github.
           <h1>Summary Statistics</h1>
 
           <div class="article-style">
-            <p>In this tutorial, I&rsquo;ll share my top 10 tips for getting started with Academic:</p>
-<h2 id="tip-1">Tip 1</h2>
-<pre><code class="language-{stata}">hist
+            <p>In this page, I&rsquo;ll share Stata commands for summary statistics.</p>
+<h2 id="opening-data-with-use-command">Opening data with <code>use</code> command</h2>
+<pre><code class="language-{stata}">use &quot;your file name.dta&quot;, clear
 </code></pre>
-<h2 id="tip-2">Tip 2</h2>
+<p>[,clear] is telling Stata to clear any other data that you have opened in Stata.</p>
+<h2 id="looking-at-variables">Looking at variables</h2>
+<ul>
+<li>Histogram is helpful</li>
+</ul>
+<pre><code class="language-{stata}">histogram varname
+
+hist varname, percent bin(15) xtitle(&quot;Your Variable&quot;)
+hist varname, percent width(10) xtitle(&quot;Your Variable&quot;)
+hist varname, freq xtitle(&quot;Your Variable&quot;)
+</code></pre>
+<h2 id="measures-of-central-tendancy-mean-median-mode">Measures of central tendancy: mean, median, mode</h2>
+<pre><code class="language-{stata}">summarize varname
+sum varname, detail
+
+graph box varname
+
+tabulate varname
+tab varname, m
+</code></pre>
 
           </div>
 
