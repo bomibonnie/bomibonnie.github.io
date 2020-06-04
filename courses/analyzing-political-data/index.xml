@@ -18,11 +18,11 @@
       <pubDate>Tue, 02 Jun 2020 00:00:00 +0100</pubDate>
       <guid>http://bomibonnie.github.io/courses/analyzing-political-data/summary-statistics/</guid>
       <description>&lt;p&gt;In this page, I&amp;rsquo;ll share Stata commands for summary statistics.&lt;/p&gt;
-&lt;h2 id=&#34;opening-data-with-use-command&#34;&gt;Opening data with &lt;code&gt;use&lt;/code&gt; command&lt;/h2&gt;
+&lt;h3 id=&#34;opening-data-with-use-command&#34;&gt;Opening data with &lt;code&gt;use&lt;/code&gt; command&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;use &amp;quot;your file name.dta&amp;quot;, clear
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;[,clear] is telling Stata to clear any other data that you have opened in Stata.&lt;/p&gt;
-&lt;h2 id=&#34;looking-at-variables&#34;&gt;Looking at variables&lt;/h2&gt;
+&lt;h3 id=&#34;looking-at-variables&#34;&gt;Looking at variables&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Histogram is helpful&lt;/li&gt;
 &lt;/ul&gt;
@@ -32,7 +32,7 @@ hist varname, percent bin(15) xtitle(&amp;quot;Your Variable&amp;quot;)
 hist varname, percent width(10) xtitle(&amp;quot;Your Variable&amp;quot;)
 hist varname, freq xtitle(&amp;quot;Your Variable&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;measures-of-central-tendancy-mean-median-mode&#34;&gt;Measures of central tendancy: mean, median, mode&lt;/h2&gt;
+&lt;h3 id=&#34;measures-of-central-tendancy-mean-median-mode&#34;&gt;Measures of central tendancy: mean, median, mode&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-{stata}&#34;&gt;summarize varname
 sum varname, detail
 
@@ -50,12 +50,12 @@ tab varname, m
       <pubDate>Tue, 02 Jun 2020 00:00:00 +0100</pubDate>
       <guid>http://bomibonnie.github.io/courses/analyzing-political-data/bivariate-statistics/</guid>
       <description>&lt;p&gt;Here are some Stata commands for bivariate statistics.&lt;/p&gt;
-&lt;h2 id=&#34;difference-of-means-test&#34;&gt;Difference of means test&lt;/h2&gt;
-&lt;h2 id=&#34;anova&#34;&gt;ANOVA&lt;/h2&gt;
-&lt;h2 id=&#34;chi2-test&#34;&gt;$\chi^2$ test&lt;/h2&gt;
-&lt;h2 id=&#34;strength-of-association&#34;&gt;Strength of association&lt;/h2&gt;
-&lt;h3 id=&#34;kendalls-tau-b&#34;&gt;Kendall&amp;rsquo;s Tau-b&lt;/h3&gt;
-&lt;h3 id=&#34;cramers-v&#34;&gt;Cramer&amp;rsquo;s V&lt;/h3&gt;
+&lt;h3 id=&#34;difference-of-means-test&#34;&gt;Difference of means test&lt;/h3&gt;
+&lt;h3 id=&#34;anova&#34;&gt;ANOVA&lt;/h3&gt;
+&lt;h3 id=&#34;chi2-test&#34;&gt;$\chi^2$ test&lt;/h3&gt;
+&lt;h3 id=&#34;strength-of-association&#34;&gt;Strength of association&lt;/h3&gt;
+&lt;h4 id=&#34;kendalls-tau-b&#34;&gt;Kendall&amp;rsquo;s Tau-b&lt;/h4&gt;
+&lt;h4 id=&#34;cramers-v&#34;&gt;Cramer&amp;rsquo;s V&lt;/h4&gt;
 </description>
     </item>
     
@@ -65,9 +65,9 @@ tab varname, m
       <pubDate>Tue, 02 Jun 2020 00:00:00 +0100</pubDate>
       <guid>http://bomibonnie.github.io/courses/analyzing-political-data/regressions/</guid>
       <description>&lt;p&gt;Below are Stata commands for correlation and regressions.&lt;/p&gt;
-&lt;h2 id=&#34;correlation&#34;&gt;Correlation&lt;/h2&gt;
-&lt;h2 id=&#34;regression&#34;&gt;Regression&lt;/h2&gt;
-&lt;h2 id=&#34;visualization-using-margins&#34;&gt;Visualization using &lt;code&gt;margins&lt;/code&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;correlation&#34;&gt;Correlation&lt;/h3&gt;
+&lt;h3 id=&#34;regression&#34;&gt;Regression&lt;/h3&gt;
+&lt;h3 id=&#34;visualization-using-margins&#34;&gt;Visualization using &lt;code&gt;margins&lt;/code&gt;&lt;/h3&gt;
 </description>
     </item>
     

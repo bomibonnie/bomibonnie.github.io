@@ -676,9 +676,13 @@ Opening data with use command use &quot;your file name.dta&quot;, clear [,clear
 
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#opening-data-with-use-command">Opening data with <code>use</code> command</a></li>
-    <li><a href="#looking-at-variables">Looking at variables</a></li>
-    <li><a href="#measures-of-central-tendancy-mean-median-mode">Measures of central tendancy: mean, median, mode</a></li>
+    <li>
+      <ul>
+        <li><a href="#opening-data-with-use-command">Opening data with <code>use</code> command</a></li>
+        <li><a href="#looking-at-variables">Looking at variables</a></li>
+        <li><a href="#measures-of-central-tendancy-mean-median-mode">Measures of central tendancy: mean, median, mode</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -695,11 +699,11 @@ Opening data with use command use &quot;your file name.dta&quot;, clear [,clear
 
           <div class="article-style">
             <p>In this page, I&rsquo;ll share Stata commands for summary statistics.</p>
-<h2 id="opening-data-with-use-command">Opening data with <code>use</code> command</h2>
+<h3 id="opening-data-with-use-command">Opening data with <code>use</code> command</h3>
 <pre><code class="language-{stata}">use &quot;your file name.dta&quot;, clear
 </code></pre>
 <p>[,clear] is telling Stata to clear any other data that you have opened in Stata.</p>
-<h2 id="looking-at-variables">Looking at variables</h2>
+<h3 id="looking-at-variables">Looking at variables</h3>
 <ul>
 <li>Histogram is helpful</li>
 </ul>
@@ -709,7 +713,7 @@ hist varname, percent bin(15) xtitle(&quot;Your Variable&quot;)
 hist varname, percent width(10) xtitle(&quot;Your Variable&quot;)
 hist varname, freq xtitle(&quot;Your Variable&quot;)
 </code></pre>
-<h2 id="measures-of-central-tendancy-mean-median-mode">Measures of central tendancy: mean, median, mode</h2>
+<h3 id="measures-of-central-tendancy-mean-median-mode">Measures of central tendancy: mean, median, mode</h3>
 <pre><code class="language-{stata}">summarize varname
 sum varname, detail
 
